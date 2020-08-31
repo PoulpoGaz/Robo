@@ -21,6 +21,7 @@ public class ScriptGUI {
 
     private String script = "";
     private String[] linesCached;
+    private int nLines = 1;
 
     public ScriptGUI(int width, int height) {
         this.width = width;
@@ -34,8 +35,8 @@ public class ScriptGUI {
 
         drawBackground(g2d);
 
-        g2d.setClip(5, 5, width - 10, height - 10);
-        drawScript(g2d);
+        g2d.setClip(10, 5, width - 20, height - 10);
+        drawScript(g2d, 10, 20);
 
         g2d.setClip(clipBounds);
         g2d.translate(-x, -y);
@@ -48,18 +49,32 @@ public class ScriptGUI {
         g2d.fillRect(5, 5, width - 10, height - 10);
     }
 
-    private void drawScript(Graphics2D g2d) {
+    private void drawScript(Graphics2D g2d, int x, int y) {
         g2d.setColor(FontColor.FOREGROUND);
 
         String[] lines = split();
 
         FontMetrics fm = g2d.getFontMetrics();
 
+        int maxNumberWidth = fm.stringWidth(Integer.toString(nLines)) + 3;
+
         int fontHeight = fm.getHeight();
         int charCount = 0;
-        int y = 20;
-        for (String line : lines) {
-            g2d.drawString(line, 10, y);
+        for (int i = 0; i < nLines; i++) {
+            g2d.setColor(FontColor.FOREGROUND_DARK); // draw the number
+            g2d.drawString(Integer.toString(i + 1), x, y);
+
+            g2d.setColor(FontColor.FOREGROUND);
+
+            String line;
+
+            if (i < lines.length) {
+                line = lines[i];
+
+                g2d.drawString(line, x + maxNumberWidth, y);
+            } else {
+                line = "";
+            }
 
             if (!hideCaret) {
                 int lastCharCount = charCount;
@@ -75,7 +90,7 @@ public class ScriptGUI {
                         width = fm.stringWidth(line.substring(0, indexOfCaret));
                     }
 
-                    g2d.fillRect(10 + width, y - fontHeight, 1, fontHeight);
+                    g2d.fillRect(x + width + maxNumberWidth, y - fontHeight, 1, fontHeight);
                 }
 
                 charCount++; // do not forget the line feed
@@ -103,6 +118,7 @@ public class ScriptGUI {
 
         if (keyPressed(VK_ENTER)) {
             insertChar('\n');
+            nLines++;
         }
         if (keyPressed(VK_SPACE)) {
             insertChar(' ');
@@ -167,13 +183,23 @@ public class ScriptGUI {
 
     private void removeChar() {
         if (caretPos != 0 && script.length() != 0) {
+
             if (caretPos == script.length()) {
+                if (script.charAt(caretPos - 1) == '\n') {
+                    nLines--;
+                }
+
                 script = script.substring(0, script.length() - 1);
             } else {
                 String firstPart = script.substring(0, caretPos - 1);
                 String secondPart = script.substring(caretPos);
 
                 script = firstPart + secondPart;
+
+
+                if (script.charAt(caretPos) == '\n') {
+                    nLines--;
+                }
             }
             caretPos--;
             linesCached = null;
@@ -198,12 +224,13 @@ public class ScriptGUI {
         }
 
         setCaretPos(pos);
+
+        isCaretMoving = true;
+        hideCaret = false;
     }
 
     private void setCaretPos(Pos pos) {
         String[] lines = split();
-
-        System.out.println(caretPos);
 
         int charCount = 0;
         int y = 0;
@@ -221,8 +248,6 @@ public class ScriptGUI {
             charCount = charCount + line.length() + 1; // do not forget the line feed
             y++;
         }
-
-        System.out.println(caretPos);
     }
 
     private Pos getCaretPos() {
@@ -254,6 +279,10 @@ public class ScriptGUI {
         }
 
         return linesCached;
+    }
+
+    public String getScript() {
+        return script;
     }
 
     public int getWidth() {

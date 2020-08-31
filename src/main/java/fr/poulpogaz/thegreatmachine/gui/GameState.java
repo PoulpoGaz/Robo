@@ -11,7 +11,7 @@ public class GameState extends State {
     private static final LevelManager levelManager = LevelManager.getInstance();
     private static final LevelRenderer levelRenderer = LevelRenderer.getInstance();
 
-    private ScriptGUI scriptGUI;
+    private final ScriptGUI scriptGUI;
 
     public GameState() {
         super("GameState");
