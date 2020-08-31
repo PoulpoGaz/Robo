@@ -1,4 +1,4 @@
-package fr.poulpogaz.thegreatmachine.gui;
+package fr.poulpogaz.thegreatmachine.utils;
 
 import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
 

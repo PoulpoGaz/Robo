@@ -14,7 +14,7 @@ import java.io.InputStream;
 
 import static fr.poulpogaz.thegreatmachine.main.TheGreatMachine.TILE_SIZE;
 
-public abstract class Level {
+public abstract class Level implements Cloneable {
 
     private final int levelIndex;
 
@@ -91,8 +91,8 @@ public abstract class Level {
     }
 
     private Robot readRobot(IJsonReader reader) throws IOException, JsonException {
-        int x = reader.nextInt() * TILE_SIZE;
-        int y = reader.nextInt() * TILE_SIZE;
+        int x = reader.nextInt();
+        int y = reader.nextInt();
 
         return new Robot(x, y);
     }
@@ -117,5 +117,18 @@ public abstract class Level {
         }
 
         return map;
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            Level level = (Level) super.clone();
+            level.robot = (Robot) robot.clone();
+            level.map = (Map) map.clone();
+
+            return level;
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError(e);
+        }
     }
 }

@@ -41,7 +41,7 @@ public class LevelRenderer {
         Robot robot = level.getRobot();
         Pos pos = robot.getPos();
 
-        renderSprite(g2d, robot, offsetX + pos.getX(), offsetY + pos.getY());
+        renderSprite(g2d, robot, offsetX + pos.getX() * TILE_SIZE, offsetY + pos.getY() * TILE_SIZE);
     }
 
     public void renderSprite(Graphics2D g2d, ISprite sprite, int x, int y) {

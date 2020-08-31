@@ -133,6 +133,7 @@ public class Window extends JFrame {
         // disable antialiasing
         g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+        g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
 
         g2d.scale(TheGreatMachine.SCALE_FACTOR, TheGreatMachine.SCALE_FACTOR);
 

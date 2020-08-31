@@ -3,7 +3,9 @@ package fr.poulpogaz.thegreatmachine.robot;
 import fr.poulpogaz.thegreatmachine.utils.ISprite;
 import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
 
-public class Robot implements ISprite {
+import static fr.poulpogaz.thegreatmachine.main.TheGreatMachine.TILE_SIZE;
+
+public class Robot implements ISprite, Cloneable {
 
     private static final ResourceLocation RESOURCE_LOCATION = new ResourceLocation("robot", ResourceLocation.ROBOT);
 
@@ -24,5 +26,17 @@ public class Robot implements ISprite {
     @Override
     public ResourceLocation getResourceLocation() {
         return RESOURCE_LOCATION;
+    }
+
+    @Override
+    public Object clone(){
+        try {
+            Robot robot = (Robot) super.clone();
+            robot.pos = new Pos(pos.x, pos.y);
+
+            return robot;
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError(e);
+        }
     }
 }

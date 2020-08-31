@@ -1,8 +1,9 @@
 package fr.poulpogaz.thegreatmachine.map;
 
 import fr.poulpogaz.thegreatmachine.robot.Pos;
+import fr.poulpogaz.thegreatmachine.robot.Robot;
 
-public class Map {
+public class Map implements Cloneable {
 
     private final Tile[][] tiles;
     private final int width;
@@ -12,6 +13,16 @@ public class Map {
         tiles = new Tile[height][width];
         this.width = width;
         this.height = height;
+    }
+
+    public boolean canMoveHere(Pos pos) {
+        if (0 <= pos.x && pos.x < width && 0 <= pos.y && pos.y < height) {
+            Tile tile = get(pos);
+
+            return !tile.isVoid() && !tile.isSolid();
+        }
+
+        return false;
     }
 
     public void put(int x, int y, Tile tile) {
@@ -32,5 +43,14 @@ public class Map {
 
     public int getHeight() {
         return height;
+    }
+
+    @Override
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new InternalError(e);
+        }
     }
 }

@@ -10,6 +10,11 @@ public class Pos {
         this.y = y;
     }
 
+    public Pos(Pos pos) {
+        this.x = pos.x;
+        this.y = pos.y;
+    }
+
     public int getX() {
         return x;
     }

@@ -1,8 +1,6 @@
 package fr.poulpogaz.thegreatmachine.gui;
 
-import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
 import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
-import fr.poulpogaz.thegreatmachine.window.MouseHandler;
 
 import java.awt.*;
 
@@ -24,8 +22,8 @@ public class Button extends GuiElement {
 
                 Composite old = g.getComposite();
 
-                g.setComposite(AlphaComposite.getInstance(AlphaComposite.DST_ATOP, 0.5f));
-                g.setColor(new Color(73, 73, 73));
+                g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+                g.setColor(new Color(45, 45, 45));
                 g.fillRect(x, y, width, height);
 
                 g.setComposite(old);

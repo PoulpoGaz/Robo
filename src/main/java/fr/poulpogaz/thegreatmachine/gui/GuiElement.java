@@ -40,7 +40,7 @@ public class GuiElement {
         load();
     }
 
-    private void load() {
+    protected void load() {
         try {
             String name = resourceLocation.getName();
 
