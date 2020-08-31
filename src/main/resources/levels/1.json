@@ -1,0 +1,18 @@
+{
+    "width": 7,
+    "height": 7,
+    "description": [
+        "Ta ta",
+        "To to"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:destination", "tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall"
+    ]
+}

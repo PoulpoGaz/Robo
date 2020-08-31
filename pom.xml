@@ -28,7 +28,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass></mainClass>
+                            <mainClass>fr.poulpogaz.thegreatmachine.main.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -56,6 +56,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.13.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.poulpogaz</groupId>
+            <artifactId>json</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
     

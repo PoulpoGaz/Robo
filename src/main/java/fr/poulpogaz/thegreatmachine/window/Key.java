@@ -4,6 +4,7 @@ public class Key {
 
     public int keyCode;
     public boolean press;
+    public int pressedNTick = 0;
     public boolean release;
 
     public Key(int keyCode) {
@@ -17,10 +18,14 @@ public class Key {
             //Press
             this.press = true;
             release = false;
+
+            pressedNTick++;
         } else {
             //Release
             this.press = false;
             release = true;
+
+            pressedNTick = 0;
         }
     }
 }

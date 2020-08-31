@@ -1,7 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="" />
+    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="LOTS of changes:&#10;-level loader&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes for making things clear in my head (Pos, Robot, ... classes)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/DrawStringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/FontColor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ScriptGUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/State.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/StateManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/FirstLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/Level.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelRenderer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Map.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Tile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Tiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/tiles/CrateTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/tiles/DestinationTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/tiles/VoidTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/tiles/WallTile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Pos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Robot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/ISprite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/ImageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/InterpolationHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/ResourceLocation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/TextureManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/1.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/robot/robot.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/tileset.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/crate.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/destination.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/floor.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/void.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tiles/wall.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheGreatMachine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheGreatMachine.ipr" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.ipr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TheGreatMachine.iws" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.iws" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/TheGreatMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/main/TheGreatMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/KeyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/MouseHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/TheGreatMachine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/View.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Key.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Key.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/MouseHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window$WindowHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window$WindowHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +70,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -27,12 +82,16 @@
     </option>
   </component>
   <component name="ProjectId" id="1glPVCv7TFb15VMOuEtxtKVUmBb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.17126437" />
@@ -40,8 +99,13 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Valentin\JavaProject\TheGreatMachine\src\main\java\fr\poulpogaz\thegreatmachine\gui" />
       <recent name="C:\Users\Valentin\JavaProject\TheGreatMachine\src\main\resources" />
       <recent name="C:\Users\Valentin\JavaProject\TheGreatMachine\src\fr\poulpogaz\thegreatmachine\window" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Valentin\JavaProject\TheGreatMachine\src\main\resources\robot" />
+      <recent name="C:\Users\Valentin\JavaProject\TheGreatMachine\src\main\resources\textures" />
     </key>
   </component>
   <component name="RunManager">
@@ -52,12 +116,12 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="fr.poulpogaz.thegreatmachine.Main" />
+      <option name="MAIN_CLASS_NAME" value="fr.poulpogaz.thegreatmachine.main.Main" />
       <module name="TheGreatMachine" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="-Dsun.java2d.opengl=true" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="fr.poulpogaz.thegreatmachine.*" />
+          <option name="PATTERN" value="fr.poulpogaz.thegreatmachine.main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -115,30 +179,59 @@
     </task>
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="LOTS of changes:&#10;-level loader&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes for making things clear in my head (Pos, Robot, ... classes)" />
+    <option name="LAST_COMMIT_MESSAGE" value="LOTS of changes:&#10;-level loader&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes for making things clear in my head (Pos, Robot, ... classes)" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598688129123">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598710432929">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598688129123" />
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598710432929" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598792765460">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598792765460" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1600.860@0.0.1600.860" timestamp="1598687440241" />
-    <state width="1556" height="217" key="GridCell.Tab.0.bottom" timestamp="1598689234869">
+    <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598780539605">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="217" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598689234869" />
-    <state width="1556" height="217" key="GridCell.Tab.0.center" timestamp="1598689234868">
+    <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598780539605" />
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598862268612">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="217" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598689234868" />
-    <state width="1556" height="217" key="GridCell.Tab.0.left" timestamp="1598689234868">
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598862268612" />
+    <state width="1556" height="182" key="GridCell.Tab.0.bottom" timestamp="1598862268971">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="217" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598689234868" />
-    <state width="1556" height="217" key="GridCell.Tab.0.right" timestamp="1598689234869">
+    <state width="1556" height="182" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598862268971" />
+    <state width="1556" height="182" key="GridCell.Tab.0.center" timestamp="1598862268971">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="217" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598689234869" />
+    <state width="1556" height="182" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598862268971" />
+    <state width="1556" height="182" key="GridCell.Tab.0.left" timestamp="1598862268971">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="182" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598862268971" />
+    <state width="1556" height="182" key="GridCell.Tab.0.right" timestamp="1598862268971">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1556" height="182" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598862268971" />
+    <state x="550" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1598711898579">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="550" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1598711898579" />
+    <state x="456" y="190" key="run.anything.popup" timestamp="1598786452189">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="190" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1598786452189" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1598789973415">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1598789973415" />
   </component>
 </project>

@@ -178,7 +178,21 @@
       <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
     </remote-repository>
   </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+  </component>
   <component name="libraryTable">
+    <library name="Maven: io.github.poulpogaz:json:1.0">
+      <CLASSES>
+        <root url="jar://D:/Dev/Java/maven/repository/io/github/poulpogaz/json/1.0/json-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC>
+        <root url="jar://D:/Dev/Java/maven/repository/io/github/poulpogaz/json/1.0/json-1.0-javadoc.jar!/" />
+      </JAVADOC>
+      <SOURCES>
+        <root url="jar://D:/Dev/Java/maven/repository/io/github/poulpogaz/json/1.0/json-1.0-sources.jar!/" />
+      </SOURCES>
+    </library>
     <library name="Maven: org.apache.logging.log4j:log4j-api:2.13.3">
       <CLASSES>
         <root url="jar://D:/Dev/Java/maven/repository/org/apache/logging/log4j/log4j-api/2.13.3/log4j-api-2.13.3.jar!/" />

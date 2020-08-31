@@ -73,11 +73,11 @@ public class MouseHandler extends MouseAdapter {
         wheelFactor = 0;
     }
 
-    public boolean release(int mouseButton) {
+    public boolean isMouseReleased(int mouseButton) {
         return release[mouseButton];
     }
 
-    public boolean press(int mouseButton) {
+    public boolean isMousePressed(int mouseButton) {
         return press[mouseButton];
     }
 

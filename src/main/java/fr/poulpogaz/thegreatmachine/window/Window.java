@@ -1,6 +1,6 @@
 package fr.poulpogaz.thegreatmachine.window;
 
-import fr.poulpogaz.thegreatmachine.View;
+import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.util.Objects;
 
 public class Window extends JFrame {
@@ -23,6 +24,8 @@ public class Window extends JFrame {
 
     private final MouseHandler mouse;
     private final KeyHandler key;
+
+    private int ticks = 0;
 
     public Window(View view) {
         this.view = Objects.requireNonNull(view);
@@ -40,7 +43,8 @@ public class Window extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         addWindowListener(new WindowHandler());
 
-        canvas.setPreferredSize(new Dimension(view.getViewWidth(), view.getViewHeight()));
+        canvas.setFocusTraversalKeysEnabled(false);
+        canvas.setPreferredSize(new Dimension(view.getWindowWidth(), view.getWindowHeight()));
         canvas.addMouseWheelListener(mouse);
         canvas.addMouseMotionListener(mouse);
         canvas.addMouseListener(mouse);
@@ -56,6 +60,7 @@ public class Window extends JFrame {
         if (!running) {
             running = true;
 
+            view.start(this);
             LOGGER.info("Starting thread");
 
             thread = new Thread(this::run);
@@ -63,6 +68,7 @@ public class Window extends JFrame {
             thread.start();
 
             setVisible(true);
+            requestFocus();
         }
     }
 
@@ -88,6 +94,7 @@ public class Window extends JFrame {
 
             while (delta >= 1) {
                 ticks++;
+                this.ticks++;
                 view.update(delta);
 
                 mouse.reset();
@@ -123,6 +130,12 @@ public class Window extends JFrame {
 
         Graphics2D g2d = (Graphics2D) bs.getDrawGraphics();
 
+        // disable antialiasing
+        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_OFF);
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
+
+        g2d.scale(TheGreatMachine.SCALE_FACTOR, TheGreatMachine.SCALE_FACTOR);
+
         view.render(g2d);
 
         g2d.dispose();
@@ -139,6 +152,10 @@ public class Window extends JFrame {
 
     public boolean isRunning() {
         return running;
+    }
+
+    public int getTicks() {
+        return ticks;
     }
 
     private class WindowHandler extends WindowAdapter {

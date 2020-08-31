@@ -1,6 +1,4 @@
-package fr.poulpogaz.thegreatmachine;
-
-import fr.poulpogaz.thegreatmachine.window.Window;
+package fr.poulpogaz.thegreatmachine.window;
 
 import java.awt.*;
 
@@ -23,4 +21,8 @@ public interface View {
     int getViewWidth();
 
     int getViewHeight();
+
+    int getWindowWidth();
+
+    int getWindowHeight();
 }
