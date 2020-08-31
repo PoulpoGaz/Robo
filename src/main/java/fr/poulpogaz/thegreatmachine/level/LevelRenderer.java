@@ -22,23 +22,26 @@ public class LevelRenderer {
 
     }
 
-    public void render(Graphics2D g2d, Level level) {
+    public void render(Graphics2D g2d, Level level, int width, int height) {
         Map map = level.getMap();
-        int width = level.getWidth();
-        int height = level.getHeight();
+        int lvlWidth = level.getWidth();
+        int lvlHeight = level.getHeight();
 
-        for (int y = 0; y < height; y++) {
-            for (int x = 0; x < width; x++) {
+        int offsetX = (width - lvlWidth * TILE_SIZE) / 2;
+        int offsetY = (height - lvlHeight * TILE_SIZE) /2;
+
+        for (int y = 0; y < lvlHeight; y++) {
+            for (int x = 0; x < lvlWidth; x++) {
                 Tile tile = map.get(x, y);
 
-                renderSprite(g2d, tile, x * TILE_SIZE, y * TILE_SIZE);
+                renderSprite(g2d, tile, offsetX + x * TILE_SIZE, offsetY + y * TILE_SIZE);
             }
         }
 
         Robot robot = level.getRobot();
         Pos pos = robot.getPos();
 
-        renderSprite(g2d, robot, pos.getX(), pos.getY());
+        renderSprite(g2d, robot, offsetX + pos.getX(), offsetY + pos.getY());
     }
 
     public void renderSprite(Graphics2D g2d, ISprite sprite, int x, int y) {

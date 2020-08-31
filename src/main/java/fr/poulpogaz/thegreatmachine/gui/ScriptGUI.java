@@ -45,8 +45,15 @@ public class ScriptGUI {
     private void drawBackground(Graphics2D g2d) {
         g2d.setColor(new Color(25, 25, 25));
         g2d.fillRect(0, 0, width, height);
+
+        FontMetrics fm = g2d.getFontMetrics();
+        int maxNumberWidth = fm.stringWidth(Integer.toString(nLines)) + 8;
+
+        g2d.setColor(new Color(33, 33, 33));
+        g2d.fillRect(5, 5, maxNumberWidth, height - 10);
+
         g2d.setColor(new Color(44, 44, 44));
-        g2d.fillRect(5, 5, width - 10, height - 10);
+        g2d.fillRect(5 + maxNumberWidth, 5, width - 10 - maxNumberWidth, height - 10);
     }
 
     private void drawScript(Graphics2D g2d, int x, int y) {
@@ -59,6 +66,7 @@ public class ScriptGUI {
         int maxNumberWidth = fm.stringWidth(Integer.toString(nLines)) + 3;
 
         int fontHeight = fm.getHeight();
+        int ascent = fm.getAscent();
         int charCount = 0;
         for (int i = 0; i < nLines; i++) {
             g2d.setColor(FontColor.FOREGROUND_DARK); // draw the number
@@ -90,7 +98,7 @@ public class ScriptGUI {
                         width = fm.stringWidth(line.substring(0, indexOfCaret));
                     }
 
-                    g2d.fillRect(x + width + maxNumberWidth, y - fontHeight, 1, fontHeight);
+                    g2d.fillRect(x + width + maxNumberWidth, y - ascent, 1, ascent);
                 }
 
                 charCount++; // do not forget the line feed

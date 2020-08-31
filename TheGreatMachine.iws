@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/Button.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GuiElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gui/play.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/gui/stop.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/gui.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TheGreatMachine.iws" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.iws" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/FontColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/FontColor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ScriptGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ScriptGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/ResourceLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/ResourceLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/TextureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/MouseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/MouseHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/textures/tileset.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/tileset.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/tiles/destination.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/tiles/destination.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/MouseHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/MouseHandler.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +79,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.poulpogaz.thegreatmachine.main.Main" />
       <module name="TheGreatMachine" />
       <option name="VM_PARAMETERS" value="-Dsun.java2d.opengl=true" />
@@ -115,11 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -139,24 +143,32 @@
       <option name="project" value="LOCAL" />
       <updated>1598862375787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="better script gui">
+      <created>1598865706583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1598865706583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="LOTS of changes:&#10;-level loader&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes for making things clear in my head (Pos, Robot, ... classes)" />
     <MESSAGE value="LOTS of changes:&#10;-level loader and level manager&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes to make things clear in my head (Pos, Robot, ... classes)" />
-    <option name="LAST_COMMIT_MESSAGE" value="LOTS of changes:&#10;-level loader and level manager&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes to make things clear in my head (Pos, Robot, ... classes)" />
+    <MESSAGE value="better script gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="better script gui" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598710432929">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598875859619">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598710432929" />
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598792765460">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598875859619" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598874904895">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598792765460" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598874904895" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -165,26 +177,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598780539605" />
-    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598862372574">
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598865702289">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598862372574" />
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom" timestamp="1598865678109">
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598865702289" />
+    <state width="1556" height="181" key="GridCell.Tab.0.bottom" timestamp="1598876282627">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598865678109" />
-    <state width="1556" height="181" key="GridCell.Tab.0.center" timestamp="1598865678109">
+    <state width="1556" height="181" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598876282627" />
+    <state width="1556" height="181" key="GridCell.Tab.0.center" timestamp="1598876282627">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598865678109" />
-    <state width="1556" height="181" key="GridCell.Tab.0.left" timestamp="1598865678109">
+    <state width="1556" height="181" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598876282627" />
+    <state width="1556" height="181" key="GridCell.Tab.0.left" timestamp="1598876282627">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598865678109" />
-    <state width="1556" height="181" key="GridCell.Tab.0.right" timestamp="1598865678109">
+    <state width="1556" height="181" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598876282627" />
+    <state width="1556" height="181" key="GridCell.Tab.0.right" timestamp="1598876282627">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598865678109" />
+    <state width="1556" height="181" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598876282627" />
     <state x="550" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1598711898579">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

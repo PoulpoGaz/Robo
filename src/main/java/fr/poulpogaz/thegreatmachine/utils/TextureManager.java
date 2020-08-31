@@ -46,6 +46,8 @@ public final class TextureManager {
         }
     }
 
+
+
     private BufferedImage loadTileTexture(ResourceLocation resource) {
         try {
             LOGGER.info("Reading resource at {}", resource);
@@ -53,42 +55,43 @@ public final class TextureManager {
 
             reader.beginObject();
 
-            String texture = reader.skipKey().nextString();
+            BufferedImage image = loadSprite(reader);
+            SPRITES.put(resource, image);
 
-            BufferedImage image = readImage(new ResourceLocation(texture));
+            reader.endObject();
+            reader.close();
 
-            if (image == null) {
-                return null;
-            }
-
-            if (reader.hasNextKey()) {
-                reader.skipKey().beginArray();
-
-                int x = reader.nextInt();
-                int y = reader.nextInt();
-
-                BufferedImage subImage = image.getSubimage(x * TheGreatMachine.TILE_SIZE, y * TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE);
-
-                SPRITES.put(resource, subImage);
-
-                reader.endArray();
-                reader.endObject();
-                reader.close();
-
-                return subImage;
-            } else {
-                reader.endObject();
-                reader.close();
-
-                SPRITES.put(resource, image);
-
-                return image;
-            }
+            return image;
         } catch (IOException | JsonException e) {
             LOGGER.warn("Failed to load texture at {}", resource);
             LOGGER.warn(e);
 
             return null;
+        }
+    }
+
+    public BufferedImage loadSprite(IJsonReader reader) throws IOException, JsonException {
+        String texture = reader.skipKey().nextString();
+
+        BufferedImage image = readImage(new ResourceLocation(texture));
+
+        if (image == null) {
+            return null;
+        }
+
+        if (reader.hasNextKey()) {
+            reader.skipKey().beginArray();
+
+            int x = reader.nextInt();
+            int y = reader.nextInt();
+
+            BufferedImage subImage = image.getSubimage(x * TheGreatMachine.TILE_SIZE, y * TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE);
+
+            reader.endArray();
+
+            return subImage;
+        } else {
+            return image;
         }
     }
 

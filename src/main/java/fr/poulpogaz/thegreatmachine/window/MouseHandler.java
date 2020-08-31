@@ -1,5 +1,7 @@
 package fr.poulpogaz.thegreatmachine.window;
 
+import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
+
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -51,15 +53,15 @@ public class MouseHandler extends MouseAdapter {
     }
 
     public void mouseDragged(MouseEvent e) {
-        mouseX = e.getX();
-        mouseY = e.getY();
+        mouseX = e.getX() / TheGreatMachine.SCALE_FACTOR;
+        mouseY = e.getY() / TheGreatMachine.SCALE_FACTOR;
 
         mouseDragged = true;
     }
 
     public void mouseMoved(MouseEvent e) {
-        mouseX = e.getX();
-        mouseY = e.getY();
+        mouseX = e.getX() / TheGreatMachine.SCALE_FACTOR;
+        mouseY = e.getY() / TheGreatMachine.SCALE_FACTOR;
     }
 
     public void reset() {

@@ -9,8 +9,9 @@ public class ResourceLocation {
     public static final int LEVEL = 2;
     public static final int FONT = 3;
     public static final int ROBOT = 4;
+    public static final int GUI_ELEMENT = 5;
 
-    private static final String[] LOCATIONS = new String[] {"/tiles/%s.json", "/textures/%s.png", "/levels/%s.json", "/fonts/%s.font", "/robot/%s.json"};
+    private static final String[] LOCATIONS = new String[] {"/tiles/%s.json", "/textures/%s.png", "/levels/%s.json", "/fonts/%s.font", "/robot/%s.json", "/gui/%s.json"};
 
     private String name;
     private int type;
@@ -31,6 +32,7 @@ public class ResourceLocation {
             case "level" -> LEVEL;
             case "font" -> FONT;
             case "robot" -> ROBOT;
+            case "gui" -> GUI_ELEMENT;
             default -> throw new IllegalStateException();
         };
 
@@ -74,6 +76,7 @@ public class ResourceLocation {
             case LEVEL -> "level:" + name;
             case FONT -> "font:" + name;
             case ROBOT -> "robot:" + name;
+            case GUI_ELEMENT -> "gui:" + name;
             default -> throw new IllegalStateException();
         };
     }
