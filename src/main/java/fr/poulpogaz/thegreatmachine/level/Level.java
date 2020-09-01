@@ -1,140 +1,51 @@
 package fr.poulpogaz.thegreatmachine.level;
 
-import fr.poulpogaz.json.IJsonReader;
-import fr.poulpogaz.json.JsonException;
-import fr.poulpogaz.json.JsonReader;
 import fr.poulpogaz.thegreatmachine.map.Map;
-import fr.poulpogaz.thegreatmachine.map.Tile;
-import fr.poulpogaz.thegreatmachine.map.Tiles;
 import fr.poulpogaz.thegreatmachine.robot.Robot;
-import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-public abstract class Level implements Cloneable {
+public abstract class Level {
 
     private final int levelIndex;
+    private LevelData data;
 
     protected Map map;
-    protected int width;
-    protected int height;
-    protected String description;
     protected Robot robot;
 
-    public Level(int levelIndex) {
-        this.levelIndex = levelIndex;
+    public Level(int index) {
+        this.levelIndex = index;
 
-        readData(ResourceLocation.createInputStreamStatic(Integer.toString(levelIndex), ResourceLocation.LEVEL));
+        data = new LevelData(index);
     }
 
-    public void init(Robot robot, Map map) {
-
+    public void init() {
+        map = data.buildMap();
+        robot = data.buildRobot();
     }
 
-    public void reset() {
-
+    public void clear() {
+        map = null;
+        robot = null;
     }
 
     public abstract boolean check();
 
-    public Robot getRobot() {
-        return robot;
+    public int getWidth() {
+        return map.getWidth();
+    }
+
+    public int getHeight() {
+        return map.getHeight();
     }
 
     public Map getMap() {
         return map;
     }
 
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
+    public Robot getRobot() {
+        return robot;
     }
 
     public String getDescription() {
-        return description;
-    }
-
-    private void readData(InputStream data) {
-        try {
-            IJsonReader reader = new JsonReader(data);
-
-            reader.beginObject();
-
-            width = reader.skipKey().nextInt();
-            height = reader.skipKey().nextInt();
-
-            reader.skipKey().beginArray();
-            description = readDescription(reader);
-            reader.endArray();
-
-            reader.skipKey().beginArray();
-            robot = readRobot(reader);
-            reader.endArray();
-
-            reader.skipKey().beginArray();
-            map = readMap(reader);
-            reader.endArray();
-
-            reader.endObject();
-            reader.close();
-        } catch (IOException | JsonException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private String readDescription(IJsonReader reader) throws IOException, JsonException {
-        StringBuilder builder = new StringBuilder();
-
-        while (!reader.isArrayEnd()) {
-            builder.append(reader.nextString()).append("\n");
-        }
-
-        return builder.toString();
-    }
-
-    private Robot readRobot(IJsonReader reader) throws IOException, JsonException {
-        int x = reader.nextInt();
-        int y = reader.nextInt();
-
-        return new Robot(x, y);
-    }
-
-    private Map readMap(IJsonReader reader) throws IOException, JsonException {
-        Map map = new Map(width, height);
-
-        int x = 0;
-        int y = 0;
-        while (!reader.isArrayEnd()) {
-            String tileResource = reader.nextString();
-
-            Tile tile = Tiles.of(tileResource);
-            map.put(x, y, tile);
-
-            x++;
-
-            if (x >= width) {
-                x = 0;
-                y++;
-            }
-        }
-
-        return map;
-    }
-
-    @Override
-    public Object clone() {
-        try {
-            Level level = (Level) super.clone();
-            level.robot = (Robot) robot.clone();
-            level.map = (Map) map.clone();
-
-            return level;
-        } catch (CloneNotSupportedException e) {
-            throw new InternalError(e);
-        }
+        return data.getDescription();
     }
 }

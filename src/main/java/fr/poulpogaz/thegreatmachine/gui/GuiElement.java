@@ -1,29 +1,15 @@
 package fr.poulpogaz.thegreatmachine.gui;
 
-import fr.poulpogaz.json.IJsonReader;
-import fr.poulpogaz.json.JsonException;
-import fr.poulpogaz.json.JsonReader;
 import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
-import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
-import fr.poulpogaz.thegreatmachine.utils.TextureManager;
 import fr.poulpogaz.thegreatmachine.window.MouseHandler;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-public class GuiElement {
+public abstract class GuiElement {
 
-    private static final Logger LOGGER = LogManager.getLogger(GuiElement.class);
-    private static final TextureManager textureManager = TheGreatMachine.getInstance().getTextureManager();
     private static final MouseHandler mouse = TheGreatMachine.getInstance().getMouseHandler();
-
-    private ResourceLocation resourceLocation;
-    protected ResourceLocation noneLocation;
-    protected ResourceLocation hoveredLocation;
-    protected ResourceLocation pressedLocation;
 
     protected boolean pressed;
     protected boolean hovered;
@@ -34,89 +20,67 @@ public class GuiElement {
     protected int width;
     protected int height;
 
-    public GuiElement(ResourceLocation resourceLocation) {
-        this.resourceLocation = resourceLocation;
+    protected boolean isVisible = true;
 
-        load();
-    }
+    public GuiElement() {
 
-    protected void load() {
-        try {
-            String name = resourceLocation.getName();
-
-            IJsonReader reader = new JsonReader(resourceLocation.createInputStream());
-
-            reader.beginObject();
-
-            for (int i = 0; i < 3; i++) {
-                String key = reader.nextKey();
-
-                reader.beginObject();
-                BufferedImage image = textureManager.loadSprite(reader);
-                reader.endObject();
-
-                switch (key) {
-                    case "pressed" -> {
-                        pressedLocation = new ResourceLocation(name + "_pressed", ResourceLocation.GUI_ELEMENT);
-                        textureManager.put(image, pressedLocation);
-                    }
-                    case "hovered" -> {
-                        hoveredLocation = new ResourceLocation(name + "_hovered", ResourceLocation.GUI_ELEMENT);
-                        textureManager.put(image, hoveredLocation);
-                    }
-                    case "none" -> {
-                        noneLocation = new ResourceLocation(name + "_none", ResourceLocation.GUI_ELEMENT);
-                        textureManager.put(image, noneLocation);
-                    }
-                    default -> throw new IllegalStateException("Unknown gui type: " + key);
-                }
-            }
-
-            reader.endObject();
-            reader.close();
-        } catch (IOException | JsonException e) {
-            LOGGER.warn("Failed to load gui element at " + resourceLocation, e);
-        }
     }
 
     public void render(Graphics2D g2d) {
-        BufferedImage image = getTexture();
+        if (isVisible) {
+            Rectangle oldClip = g2d.getClipBounds();
 
-        g2d.drawImage(image, x, y, null);
+            g2d.setClip(x, y, width, height);
+            g2d.translate(x, y);
+            renderImpl(g2d);
+
+            g2d.translate(-x, -y);
+            g2d.setClip(oldClip);
+        }
     }
 
+    protected abstract void renderImpl(Graphics2D g2d);
+
     public void update() {
-        int mX = mouse.getMouseX();
-        int mY = mouse.getMouseY();
+        if (isVisible) {
+            int mX = mouse.getMouseX();
+            int mY = mouse.getMouseY();
 
-        if (x <= mX && mX <= x + width && y <= mY && mY <= y + height) {
-            hovered = true;
+            if (x <= mX && mX <= x + width && y <= mY && mY <= y + height) {
+                hovered = true;
 
-            if (mouse.isMousePressed(MouseHandler.LEFT_BUTTON)) {
-                pressed = true;
-                released = false;
-            } else if (mouse.isMouseReleased(MouseHandler.LEFT_BUTTON)) {
-                pressed = false;
-                released = true;
+                if (mouse.isMousePressed(MouseHandler.LEFT_BUTTON)) {
+                    pressed = true;
+                    released = false;
+                } else if (mouse.isMouseReleased(MouseHandler.LEFT_BUTTON)) {
+                    pressed = false;
+                    released = true;
+                } else {
+                    pressed = false;
+                    released = false;
+                }
             } else {
+                hovered = false;
                 pressed = false;
                 released = false;
             }
-        } else {
-            hovered = false;
-            pressed = false;
-            released = false;
+
+            updateImpl();
         }
     }
 
-    public BufferedImage getTexture() {
-        if (pressed) {
-            return textureManager.getTexture(pressedLocation);
-        } else if (hovered) {
-            return textureManager.getTexture(hoveredLocation);
-        } else {
-            return textureManager.getTexture(noneLocation);
-        }
+    protected abstract void updateImpl();
+
+    public boolean isPressed() {
+        return pressed;
+    }
+
+    public boolean isHovered() {
+        return hovered;
+    }
+
+    public boolean isReleased() {
+        return released;
     }
 
     public int getX() {
@@ -158,7 +122,11 @@ public class GuiElement {
         setHeight(height);
     }
 
-    public ResourceLocation getResourceLocation() {
-        return resourceLocation;
+    public boolean isVisible() {
+        return isVisible;
+    }
+
+    public void setVisible(boolean visible) {
+        isVisible = visible;
     }
 }

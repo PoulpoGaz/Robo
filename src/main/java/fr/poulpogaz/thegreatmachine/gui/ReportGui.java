@@ -14,7 +14,6 @@ public class ReportGui extends GuiElement {
     private int maxWidth;
 
     private Report report;
-    private boolean isVisible;
 
     private boolean isValid;
 
@@ -28,60 +27,53 @@ public class ReportGui extends GuiElement {
     private int tickCount;
 
     public ReportGui() {
-        super(null);
+        isVisible = false;
     }
 
     @Override
-    protected void load() {
+    public void renderImpl(Graphics2D g2d) {
+        if (!isValid) {
+            computeBounds(g2d.getFontMetrics());
+            setColors();
 
-    }
-
-    @Override
-    public void render(Graphics2D g2d) {
-        if (isVisible) {
-            if (!isValid) {
-                computeBounds(g2d.getFontMetrics());
-                setColors();
-
-                isValid = true;
-            }
-
-            Composite old = g2d.getComposite();
-
-            boolean decreaseAlpha = tickCount > _3_SEC;
-
-            if (decreaseAlpha) {
-                float alpha = 1 - ((float) tickCount - _3_SEC) / _1_SEC;
-
-                g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
-            }
-
-            FontMetrics fm = g2d.getFontMetrics();
-
-            g2d.setColor(out);
-            g2d.fillRect(x, y, width, height);
-            g2d.setColor(in);
-            g2d.fillRect(x + 5, y + 5, width - 10, height - 10);
-
-
-            String[] lines = text.split("\n");
-            g2d.setColor(FontColor.FOREGROUND_LIGHT);
-
-            int yText = y + 20 - fm.getAscent();
-            for (int i = 0, length = lines.length; i < length; i++) {
-                String line = lines[i];
-
-                if (i == length - 1) {
-                    g2d.setColor(FontColor.FOREGROUND);
-                }
-
-                g2d.drawString(line, x + 8, yText);
-
-                yText += fm.getHeight();
-            }
-
-            g2d.setComposite(old);
+            isValid = true;
         }
+
+        Composite old = g2d.getComposite();
+
+        boolean decreaseAlpha = tickCount > _3_SEC;
+
+        if (decreaseAlpha) {
+            float alpha = 1 - ((float) tickCount - _3_SEC) / _1_SEC;
+
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha));
+        }
+
+        FontMetrics fm = g2d.getFontMetrics();
+
+        g2d.setColor(out);
+        g2d.fillRect(0, 0, width, height);
+        g2d.setColor(in);
+        g2d.fillRect(5, 5, width - 10, height - 10);
+
+
+        String[] lines = text.split("\n");
+        g2d.setColor(FontColor.FOREGROUND_LIGHT);
+
+        int yText = 20 - fm.getAscent();
+        for (int i = 0, length = lines.length; i < length; i++) {
+            String line = lines[i];
+
+            if (i == length - 1) {
+                g2d.setColor(FontColor.FOREGROUND);
+            }
+
+            g2d.drawString(line, 8, yText);
+
+            yText += fm.getHeight();
+        }
+
+        g2d.setComposite(old);
     }
 
     private void setColors() {
@@ -139,10 +131,8 @@ public class ReportGui extends GuiElement {
     }
 
     @Override
-    public void update() {
-        if (isVisible && isValid) {
-            super.update();
-
+    public void updateImpl() {
+        if (isValid) {
             if (released) {
                 isVisible = false;
                 showClickToHide = false;

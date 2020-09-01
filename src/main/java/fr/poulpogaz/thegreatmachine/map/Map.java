@@ -1,16 +1,15 @@
 package fr.poulpogaz.thegreatmachine.map;
 
 import fr.poulpogaz.thegreatmachine.robot.Pos;
-import fr.poulpogaz.thegreatmachine.robot.Robot;
 
-public class Map implements Cloneable {
+public class Map {
 
     private final Tile[][] tiles;
     private final int width;
     private final int height;
 
-    public Map(int width, int height) {
-        tiles = new Tile[height][width];
+    public Map(Tile[][] tiles, int width, int height) {
+        this.tiles = tiles;
         this.width = width;
         this.height = height;
     }
@@ -43,14 +42,5 @@ public class Map implements Cloneable {
 
     public int getHeight() {
         return height;
-    }
-
-    @Override
-    public Object clone() {
-        try {
-            return super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new InternalError(e);
-        }
     }
 }

@@ -4,7 +4,7 @@ import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
 
 import java.awt.*;
 
-public class Button extends GuiElement {
+public class Button extends TexturedGuiElement {
 
     private boolean active = true;
     private Runnable releaseListener = () -> {};
@@ -13,44 +13,38 @@ public class Button extends GuiElement {
         super(resourceLocation);
     }
 
-    public void render(Graphics2D g2d) {
+    protected void renderImpl(Graphics2D g2d) {
         if (!active) {
             Graphics2D g = (Graphics2D) g2d.create();
 
             try {
-                super.render(g);
+                super.renderImpl(g);
 
                 Composite old = g.getComposite();
 
                 g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
                 g.setColor(new Color(45, 45, 45));
-                g.fillRect(x, y, width, height);
+                g.fillRect(0, 0, width, height);
 
                 g.setComposite(old);
             } finally {
                 g.dispose();
             }
         } else {
-            super.render(g2d);
+            super.renderImpl(g2d);
         }
     }
 
-    public void update() {
+    protected void updateImpl() {
         if (active) {
-            super.update();
-
             if (released) {
                 releaseListener.run();
             }
+        } else {
+            pressed = false;
+            hovered = false;
+            released = false;
         }
-    }
-
-    public boolean isPressed() {
-        return pressed;
-    }
-
-    public boolean isReleased() {
-        return released;
     }
 
     public boolean isActive() {

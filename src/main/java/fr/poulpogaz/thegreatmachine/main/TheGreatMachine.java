@@ -1,8 +1,6 @@
 package fr.poulpogaz.thegreatmachine.main;
 
-import fr.poulpogaz.thegreatmachine.gui.StateManager;
-import fr.poulpogaz.thegreatmachine.level.LevelManager;
-import fr.poulpogaz.thegreatmachine.level.LevelRenderer;
+import fr.poulpogaz.thegreatmachine.states.StateManager;
 import fr.poulpogaz.thegreatmachine.utils.TextureManager;
 import fr.poulpogaz.thegreatmachine.window.KeyHandler;
 import fr.poulpogaz.thegreatmachine.window.MouseHandler;
@@ -12,7 +10,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
-import java.awt.event.KeyEvent;
 
 
 public class TheGreatMachine extends Canvas implements View {
@@ -64,9 +61,6 @@ public class TheGreatMachine extends Canvas implements View {
         stateManager = new StateManager();
         stateManager.loadStates();
         stateManager.switchGUI("GameState");
-
-        LOGGER.info("Loading levels");
-        LevelManager.getInstance().loadLevels();
     }
 
     @Override

@@ -52,7 +52,7 @@ public final class ScriptExecutor {
                 case "goto" -> operation = new GoTo(i);
                 case "move" -> operation = new Move(i);
                 default -> {
-                    return new Report("Unknown operation: " + parts[0], i, ScriptExecutor.class);
+                    return new Report("Unknown operation: \"" + parts[0] + "\"", i, ScriptExecutor.class);
                 }
             }
 

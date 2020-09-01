@@ -1,4 +1,4 @@
-package fr.poulpogaz.thegreatmachine.gui;
+package fr.poulpogaz.thegreatmachine.states;
 
 import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
 import fr.poulpogaz.thegreatmachine.window.MouseHandler;

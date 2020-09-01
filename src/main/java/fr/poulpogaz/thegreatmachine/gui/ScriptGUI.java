@@ -8,12 +8,9 @@ import java.awt.*;
 
 import static java.awt.event.KeyEvent.*;
 
-public class ScriptGUI {
+public class ScriptGUI extends GuiElement {
 
     private static final KeyHandler keyHandler = TheGreatMachine.getInstance().getKeyHandler();
-
-    private int width;
-    private int height;
 
     private int caretPos = 0;
     private boolean isCaretMoving = false;
@@ -23,23 +20,15 @@ public class ScriptGUI {
     private String[] linesCached;
     private int nLines = 1;
 
-    public ScriptGUI(int width, int height) {
-        this.width = width;
-        this.height = height;
+    public ScriptGUI() {
+
     }
 
-    public void render(Graphics2D g2d, int x, int y) {
-        Shape clipBounds = g2d.getClipBounds();
-        g2d.setClip(x, y, width, height);
-        g2d.translate(x, y);
-
+    public void renderImpl(Graphics2D g2d) {
         drawBackground(g2d);
 
         g2d.setClip(10, 5, width - 20, height - 10);
         drawScript(g2d, 10, 20);
-
-        g2d.setClip(clipBounds);
-        g2d.translate(-x, -y);
     }
 
     private void drawBackground(Graphics2D g2d) {
@@ -108,7 +97,7 @@ public class ScriptGUI {
         }
     }
 
-    public void update() {
+    public void updateImpl() {
         if (TheGreatMachine.getInstance().getTicks() % 15 == 0 && !isCaretMoving) {
             hideCaret = !hideCaret;
         }
