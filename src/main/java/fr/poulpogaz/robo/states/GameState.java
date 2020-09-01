@@ -1,7 +1,6 @@
 package fr.poulpogaz.robo.states;
 
 import fr.poulpogaz.robo.gui.*;
-import fr.poulpogaz.robo.gui.Button;
 import fr.poulpogaz.robo.level.Level;
 import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.level.LevelRenderer;
@@ -27,11 +26,11 @@ public class GameState extends State {
     private static final int LEVEL_RENDER_WIDTH = Robo.WIDTH - SCRIPT_GUI_WIDTH;
 
     private final ScriptGUI scriptGUI;
-    private final Button playButton;
-    private final Button stopButton;
-    private final Button showInfo;
-    private final Button backButton;
-    private final InfoGUI infoGui;
+    private final TexturedButton playButton;
+    private final TexturedButton stopButton;
+    private final TexturedButton showInfo;
+    private final TexturedButton backButton;
+    private final GUIBox infoGui;
 
     private final ReportGui reportGui;
     private Future<Report> scriptParser;
@@ -44,22 +43,24 @@ public class GameState extends State {
         scriptGUI = new ScriptGUI();
         scriptGUI.setBounds(LEVEL_RENDER_WIDTH, 0, SCRIPT_GUI_WIDTH, Robo.HEIGHT);
 
-        infoGui = new InfoGUI();
+        infoGui = new GUIBox();
+        infoGui.setTitle("** INFO **");
+        infoGui.addButton(new StringButton("OK", () -> infoGui.setVisible(false)));
 
-        playButton = new Button(new ResourceLocation("play", ResourceLocation.GUI_ELEMENT));
+        playButton = new TexturedButton(new ResourceLocation("play", ResourceLocation.GUI_ELEMENT));
         playButton.setBounds(5, 5, TILE_SIZE, TILE_SIZE);
         playButton.setReleaseListener(this::play);
 
-        stopButton = new Button(new ResourceLocation("stop", ResourceLocation.GUI_ELEMENT));
+        stopButton = new TexturedButton(new ResourceLocation("stop", ResourceLocation.GUI_ELEMENT));
         stopButton.setBounds(15 + TILE_SIZE, 5, TILE_SIZE, TILE_SIZE);
         stopButton.setActive(false);
         stopButton.setReleaseListener(this::stop);
 
-        showInfo = new Button(new ResourceLocation("info", ResourceLocation.GUI_ELEMENT));
+        showInfo = new TexturedButton(new ResourceLocation("info", ResourceLocation.GUI_ELEMENT));
         showInfo.setBounds(5, 15 + TILE_SIZE, TILE_SIZE, TILE_SIZE);
         showInfo.setReleaseListener(this::showInfo);
 
-        backButton = new Button(new ResourceLocation("back", ResourceLocation.GUI_ELEMENT));
+        backButton = new TexturedButton(new ResourceLocation("back", ResourceLocation.GUI_ELEMENT));
         backButton.setBounds(5, HEIGHT - TILE_SIZE - 5, TILE_SIZE, TILE_SIZE);
         backButton.setReleaseListener(this::back);
 
@@ -71,11 +72,11 @@ public class GameState extends State {
 
     @Override
     public void show() {
-        infoGui.setText(levelManager.getCurrentLevel().getDescription());
-
         levelManager.initLevel();
 
         Level level = levelManager.getCurrentLevel();
+
+        infoGui.setText(level.getDescription());
 
         if (level.getScript() != null) {
             scriptGUI.setScript(level.getScript());
@@ -206,5 +207,10 @@ public class GameState extends State {
         levelManager.getCurrentLevel().setScript(scriptGUI.getScript());
 
         manager.switchState(MainMenu.class);
+    }
+
+    @Override
+    public void hide() {
+        levelManager.save();
     }
 }

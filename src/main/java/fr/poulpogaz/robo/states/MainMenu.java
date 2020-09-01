@@ -1,7 +1,11 @@
 package fr.poulpogaz.robo.states;
 
 import fr.poulpogaz.robo.gui.FontColor;
+import fr.poulpogaz.robo.gui.GUIBox;
+import fr.poulpogaz.robo.gui.StringButton;
+import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.main.Robo;
+import fr.poulpogaz.robo.utils.BackgroundThread;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 import fr.poulpogaz.robo.utils.TextureManager;
 import fr.poulpogaz.robo.window.KeyHandler;
@@ -13,22 +17,40 @@ import java.awt.image.BufferedImage;
 public class MainMenu extends State {
 
     private static final TextureManager textureManager = Robo.getInstance().getTextureManager();
+    private static final LevelManager levelManager = LevelManager.getInstance();
     private static final ResourceLocation BACKGROUND = new ResourceLocation("main_menu", ResourceLocation.TEXTURE);
 
     private static final KeyHandler key = Robo.getInstance().getKeyHandler();
 
-    private static final String[] MENUS = new String[] {"Play", "Continue", "Exit"};
+    private static final String[] MENUS = new String[] {"New game", "Continue", "Exit"};
     private int index;
 
     private Font font;
 
+    private GUIBox warning;
+
+    private Boolean hasSave;
+
     public MainMenu() {
         super("MainMenu");
+
+        warning = new GUIBox();
+        warning.setTitle("** WARNING **");
+        warning.setText("Are you sure you want to\ndelete you old game?");
+        warning.addButton(new StringButton("Yes", () -> {
+            BackgroundThread.submit(levelManager::deleteSave);
+            warning.setVisible(false);
+            switchToGame(false);
+        }));
+
+        warning.addButton(new StringButton("No", () -> warning.setVisible(false)));
     }
 
     @Override
     public void show() {
         index = 0;
+        hasSave = null;
+        warning.setVisible(false);
     }
 
     @Override
@@ -44,6 +66,16 @@ public class MainMenu extends State {
             font = g2d.getFont().deriveFont(16f);
         }
 
+        if (hasSave == null) {
+            hasSave = levelManager.hasSave();
+        }
+
+        drawMenu(g2d);
+
+        warning.render(g2d);
+    }
+
+    private void drawMenu(Graphics2D g2d) {
         Font old = g2d.getFont();
         g2d.setFont(font);
 
@@ -71,11 +103,44 @@ public class MainMenu extends State {
 
     @Override
     public void update(float delta) {
+        if (hasSave == null) {
+            hasSave = levelManager.hasSave();
+        }
+
+        if (!warning.isVisible()) {
+            moveCursor();
+
+            if (key.isKeyReleased(KeyEvent.VK_ENTER)) {
+                switch (index) {
+                    case 0 -> {
+                        if (levelManager.hasSave()) {
+                            warning.setVisible(true);
+                        } else {
+                            switchToGame(false);
+                        }
+                    }
+                    case 1 -> switchToGame(true);
+                    case 2 -> manager.exit();
+                }
+            }
+        } else {
+            warning.update();
+        }
+    }
+
+    private void switchToGame(boolean read) {
+        LevelManager.getInstance().loadLevels(read);
+        manager.switchState(GameState.class);
+    }
+
+    private void moveCursor() {
         if (key.isKeyReleased(KeyEvent.VK_UP)) {
             index--;
 
             if (index < 0) {
                 index = MENUS.length - 1;
+            } else if (index == 1 && !hasSave) {
+                index = 0;
             }
         }
 
@@ -84,13 +149,8 @@ public class MainMenu extends State {
 
             if (index >= MENUS.length) {
                 index = 0;
-            }
-        }
-
-        if (key.isKeyReleased(KeyEvent.VK_ENTER)) {
-            switch (index) {
-                case 0 -> manager.switchState(GameState.class);
-                case 2 -> manager.exit();
+            } else if (index == 1 && !hasSave) {
+                index = 2;
             }
         }
     }

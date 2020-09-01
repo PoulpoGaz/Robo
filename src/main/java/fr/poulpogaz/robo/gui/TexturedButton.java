@@ -4,12 +4,12 @@ import fr.poulpogaz.robo.utils.ResourceLocation;
 
 import java.awt.*;
 
-public class Button extends TexturedGuiElement {
+public class TexturedButton extends TexturedGuiElement {
 
     private boolean active = true;
     private Runnable releaseListener = () -> {};
 
-    public Button(ResourceLocation resourceLocation) {
+    public TexturedButton(ResourceLocation resourceLocation) {
         super(resourceLocation);
     }
 

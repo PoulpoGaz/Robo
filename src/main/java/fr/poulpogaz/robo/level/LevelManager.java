@@ -26,15 +26,44 @@ public final class LevelManager {
 
     private LevelManager() {
         levels = new ArrayList<>();
-        loadLevels();
     }
 
-    public void loadLevels() {
+    public void loadLevels(boolean read) {
         levels.add(new FirstLevel());
 
-        read();
+        if (read) {
+            read();
+        } else {
+            index = 0;
+        }
 
         currentLevel = levels.get(index);
+    }
+
+    public boolean hasSave() {
+        Path save = Cache.of("save");
+
+        return Cache.exists(save);
+    }
+
+    public void deleteSave() {
+        try(Stream<Path> paths = Cache.walk(Cache.of(""))) {
+
+            paths.forEach((p) -> {
+                if (Cache.isDirectory(p)) {
+                    return;
+                }
+
+                try {
+                    Cache.delete(p);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void initLevel() {

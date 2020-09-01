@@ -4,10 +4,11 @@ import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.window.MouseHandler;
 
 import java.awt.*;
+import java.awt.geom.Rectangle2D;
 
 public abstract class GuiElement {
 
-    private static final MouseHandler mouse = Robo.getInstance().getMouseHandler();
+    protected static final MouseHandler mouse = Robo.getInstance().getMouseHandler();
 
     protected boolean pressed;
     protected boolean hovered;
@@ -38,6 +39,21 @@ public abstract class GuiElement {
     }
 
     protected abstract void renderImpl(Graphics2D g2d);
+
+    @SuppressWarnings("SuspiciousNameCombination")
+    protected void drawBackground(Graphics2D g2d, int borderWidth, Color in, Color out) {
+        Stroke old = g2d.getStroke();
+
+        float halfWidth = borderWidth / 2f;
+        g2d.setStroke(new BasicStroke(borderWidth));
+        g2d.setColor(out);
+        g2d.draw(new Rectangle2D.Float(halfWidth, halfWidth, width - borderWidth, height - borderWidth));
+
+        g2d.setStroke(old);
+
+        g2d.setColor(in);
+        g2d.fillRect(borderWidth, borderWidth, width - borderWidth * 2, height - borderWidth * 2);
+    }
 
     public void update() {
         if (isVisible) {

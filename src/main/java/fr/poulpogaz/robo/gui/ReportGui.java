@@ -51,11 +51,7 @@ public class ReportGui extends GuiElement {
 
         FontMetrics fm = g2d.getFontMetrics();
 
-        g2d.setColor(out);
-        g2d.fillRect(0, 0, width, height);
-        g2d.setColor(in);
-        g2d.fillRect(5, 5, width - 10, height - 10);
-
+        drawBackground(g2d, 6, in, out);
 
         String[] lines = text.split("\n");
         g2d.setColor(FontColor.FOREGROUND_LIGHT);
