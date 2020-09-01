@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>fr.poulpogaz</groupId>
-    <artifactId>tgm</artifactId>
+    <artifactId>robo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <build>
@@ -28,7 +28,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>fr.poulpogaz.thegreatmachine.main.Main</mainClass>
+                            <mainClass>fr.poulpogaz.robo.main.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
