@@ -6,6 +6,7 @@ import fr.poulpogaz.thegreatmachine.level.Level;
 import fr.poulpogaz.thegreatmachine.level.LevelManager;
 import fr.poulpogaz.thegreatmachine.level.LevelRenderer;
 import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
+import fr.poulpogaz.thegreatmachine.robot.ExecuteReport;
 import fr.poulpogaz.thegreatmachine.robot.Report;
 import fr.poulpogaz.thegreatmachine.robot.ScriptThread;
 import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
@@ -133,17 +134,19 @@ public class GameState extends State {
         if (TheGreatMachine.getInstance().getTicks() % 30 == 0) {
             Level currentLevel = levelManager.getCurrentLevel();
 
+            ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
             boolean levelFinished = currentLevel.check();
 
-            boolean end = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
-            if (end || levelFinished) {
+            if (report.isEnd() || levelFinished) {
                 isRunning = false;
 
                 if (levelFinished) {
                     manager.exit();
                 } else {
-                    levelManager.initLevel();
+                    stop();
                 }
+            } else {
+                scriptGUI.highlightLine(report.getLine());
             }
         }
     }
@@ -161,6 +164,7 @@ public class GameState extends State {
         stopButton.setActive(false);
 
         isRunning = false;
+        scriptGUI.highlightLine(-1);
         levelManager.initLevel();
     }
 

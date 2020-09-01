@@ -3,7 +3,6 @@ package fr.poulpogaz.thegreatmachine.robot;
 import fr.poulpogaz.thegreatmachine.map.Map;
 
 import java.util.concurrent.*;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class ScriptThread {
 
@@ -14,7 +13,7 @@ public class ScriptThread {
         return executor.submit(() -> scriptExecutor.parse(script));
     }
 
-    public static boolean executeOneLine(Map map, Robot robot) {
+    public static ExecuteReport executeOneLine(Map map, Robot robot) {
         return scriptExecutor.executeOneLine(map, robot);
     }
 

@@ -2,8 +2,7 @@
     "width": 7,
     "height": 7,
     "description": [
-        "Ta ta",
-        "To to"
+        "Move the robot to the destination tile"
     ],
     "robot": [1, 1],
     "data": [

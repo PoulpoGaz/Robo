@@ -10,14 +10,14 @@ public class StateManager {
 
     private static final Logger LOGGER = LogManager.getLogger(StateManager.class);
 
-    private final HashMap<String, State> GUI_MAP;
+    private final HashMap<String, State> STATE_MAP;
 
     private State currentState;
 
     private boolean exit = false;
 
     public StateManager() {
-        GUI_MAP = new HashMap<>();
+        STATE_MAP = new HashMap<>();
     }
 
     public void loadStates() {
@@ -33,15 +33,15 @@ public class StateManager {
     }
 
     private void add(State state) {
-        GUI_MAP.put(state.getName(), state);
+        STATE_MAP.put(state.getName(), state);
     }
 
-    public State getGUI(String gui) {
-        return GUI_MAP.get(gui);
+    public State getState(String state) {
+        return STATE_MAP.get(state);
     }
 
-    public void switchGUI(String gui) {
-        State g = GUI_MAP.get(gui);
+    public void switchState(String state) {
+        State g = STATE_MAP.get(state);
 
         if (g != null) {
             if (currentState != null) {
@@ -50,9 +50,9 @@ public class StateManager {
             currentState = g;
             currentState.show();
 
-            LOGGER.info("Switching state to {}", gui);
+            LOGGER.info("Switching state to {}", state);
         } else {
-            LOGGER.info("Unknown state: {}", gui);
+            LOGGER.info("Unknown state: {}", state);
         }
     }
 

@@ -60,7 +60,7 @@ public class TheGreatMachine extends Canvas implements View {
         textureManager = new TextureManager();
         stateManager = new StateManager();
         stateManager.loadStates();
-        stateManager.switchGUI("GameState");
+        stateManager.switchState("GameState");
     }
 
     @Override

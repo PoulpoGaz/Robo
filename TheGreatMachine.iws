@@ -2,28 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/InfoGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/TexturedGuiElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/MapBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/RobotBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/gui/info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ExecuteReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/2.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TheGreatMachine.iws" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GuiElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GuiElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ReportGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ReportGui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ScriptGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ScriptGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/main/TheGreatMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/main/TheGreatMachine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/gui.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/gui.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/GameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/states/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/levels/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levels/1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598944234082</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add info gui">
+      <created>1598948881847</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1598948881847</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -190,17 +185,18 @@
     <MESSAGE value="gui buttons" />
     <MESSAGE value="basic script executor" />
     <MESSAGE value="fix script thread  not stopping." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix script thread  not stopping." />
+    <MESSAGE value="add info gui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add info gui" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598875859619">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598875859619" />
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598946742845">
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598949491513">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598946742845" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598949491513" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -213,30 +209,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598945402368" />
-    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598944231805">
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598948878398">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598944231805" />
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598948878398" />
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1598948351194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1598948351194" />
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom" timestamp="1598948792006">
+    <state width="1556" height="181" key="GridCell.Tab.0.bottom" timestamp="1598950082939">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598948792006" />
-    <state width="1556" height="181" key="GridCell.Tab.0.center" timestamp="1598948792006">
+    <state width="1556" height="181" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598950082939" />
+    <state width="1556" height="181" key="GridCell.Tab.0.center" timestamp="1598950082939">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598948792006" />
-    <state width="1556" height="181" key="GridCell.Tab.0.left" timestamp="1598948792006">
+    <state width="1556" height="181" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598950082939" />
+    <state width="1556" height="181" key="GridCell.Tab.0.left" timestamp="1598950082939">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598948792006" />
-    <state width="1556" height="181" key="GridCell.Tab.0.right" timestamp="1598948792006">
+    <state width="1556" height="181" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598950082939" />
+    <state width="1556" height="181" key="GridCell.Tab.0.right" timestamp="1598950082939">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598948792006" />
+    <state width="1556" height="181" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598950082939" />
     <state width="1556" height="269" key="GridCell.Tab.1.bottom" timestamp="1598896841703">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

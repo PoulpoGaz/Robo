@@ -20,6 +20,8 @@ public class ScriptGUI extends GuiElement {
     private String[] linesCached;
     private int nLines = 1;
 
+    private int highlightedLine = -1;
+
     public ScriptGUI() {
 
     }
@@ -43,6 +45,14 @@ public class ScriptGUI extends GuiElement {
 
         g2d.setColor(new Color(44, 44, 44));
         g2d.fillRect(5 + maxNumberWidth, 5, width - 10 - maxNumberWidth, height - 10);
+
+        if (highlightedLine >= 0) {
+            g2d.setColor(new Color(90, 90, 90));
+
+            int y = 14 + fm.getHeight() * highlightedLine;
+
+            g2d.fillRect(5 + maxNumberWidth, y, width - 10 - maxNumberWidth, fm.getAscent());
+        }
     }
 
     private void drawScript(Graphics2D g2d, int x, int y) {
@@ -276,6 +286,10 @@ public class ScriptGUI extends GuiElement {
         }
 
         return linesCached;
+    }
+
+    public void highlightLine(int line) {
+        this.highlightedLine = line;
     }
 
     public String getScript() {

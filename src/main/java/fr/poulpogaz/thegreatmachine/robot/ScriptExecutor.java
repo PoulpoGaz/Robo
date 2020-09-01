@@ -108,18 +108,20 @@ public final class ScriptExecutor {
     /**
      * @return true if the end is reached
      */
-    public boolean executeOneLine(Map map, Robot robot) {
+    public ExecuteReport executeOneLine(Map map, Robot robot) {
         if (currentLine == operations.length) {
-            return true;
+            return new ExecuteReport(-1, null, true);
         }
 
         LOGGER.info("Executing line {}", currentLine);
 
         Operation operation = operations[currentLine];
 
+        int oldLine = currentLine;
+
         currentLine = operation.execute(map, robot);
 
-        return currentLine == operations.length;
+        return new ExecuteReport(oldLine, operation, false);
     }
 
     public int getCurrentLine() {

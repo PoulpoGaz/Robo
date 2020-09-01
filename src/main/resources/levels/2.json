@@ -1,0 +1,18 @@
+{
+    "width": 7,
+    "height": 7,
+    "description": [
+        "Move the robot to the destination tile",
+        "Don't fall in void!"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",
+        "tile:wall", "tile:floor", "tile:void",  "tile:floor",  "tile:floor",  "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor",  "tile:void",  "tile:floor", "tile:wall",
+        "tile:wall", "tile:void",  "tile:void",  "tile:void",  "tile:floor",  "tile:floor", "tile:wall",
+        "tile:wall", "tile:void",  "tile:void",  "tile:void",  "tile:floor",  "tile:void", "tile:wall",
+        "tile:wall", "tile:void",  "tile:void",  "tile:void",  "tile:floor",  "tile:destination", "tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall"
+    ]
+}
