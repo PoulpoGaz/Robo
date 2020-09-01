@@ -10,7 +10,7 @@ public class StateManager {
 
     private static final Logger LOGGER = LogManager.getLogger(StateManager.class);
 
-    private final HashMap<String, State> STATE_MAP;
+    private final HashMap<Class<?>, State> STATE_MAP;
 
     private State currentState;
 
@@ -21,7 +21,8 @@ public class StateManager {
     }
 
     public void loadStates() {
-        add(new GameState());
+        add(new MainMenu(), MainMenu.class);
+        add(new GameState(), GameState.class);
     }
 
     public void update(float delta) {
@@ -32,16 +33,16 @@ public class StateManager {
         currentState.render(g);
     }
 
-    private void add(State state) {
-        STATE_MAP.put(state.getName(), state);
+    private <T extends State> void add(T state, Class<T> class_) {
+        STATE_MAP.put(class_, state);
     }
 
-    public State getState(String state) {
-        return STATE_MAP.get(state);
+    public State getState(Class<? extends State> class_) {
+        return STATE_MAP.get(class_);
     }
 
-    public void switchState(String state) {
-        State g = STATE_MAP.get(state);
+    public void switchState(Class<?> class_) {
+        State g = STATE_MAP.get(class_);
 
         if (g != null) {
             if (currentState != null) {
@@ -50,9 +51,9 @@ public class StateManager {
             currentState = g;
             currentState.show();
 
-            LOGGER.info("Switching state to {}", state);
+            LOGGER.info("Switching state to {}", class_);
         } else {
-            LOGGER.info("Unknown state: {}", state);
+            LOGGER.info("Unknown state: {}", class_);
         }
     }
 

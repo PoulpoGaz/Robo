@@ -7,6 +7,7 @@ public abstract class Level {
 
     private final int levelIndex;
     private LevelData data;
+    private String script;
 
     protected Map map;
     protected Robot robot;
@@ -47,5 +48,17 @@ public abstract class Level {
 
     public String getDescription() {
         return data.getDescription();
+    }
+
+    public void setScript(String script) {
+        this.script = script;
+    }
+
+    public String getScript() {
+        return script;
+    }
+
+    public int getIndex() {
+        return levelIndex;
     }
 }

@@ -1,13 +1,13 @@
 package fr.poulpogaz.robo.gui;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.window.MouseHandler;
 
 import java.awt.*;
 
 public abstract class GuiElement {
 
-    private static final MouseHandler mouse = TheGreatMachine.getInstance().getMouseHandler();
+    private static final MouseHandler mouse = Robo.getInstance().getMouseHandler();
 
     protected boolean pressed;
     protected boolean hovered;

@@ -5,7 +5,7 @@ import fr.poulpogaz.robo.gui.Button;
 import fr.poulpogaz.robo.level.Level;
 import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.level.LevelRenderer;
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.robot.ExecuteReport;
 import fr.poulpogaz.robo.robot.Report;
 import fr.poulpogaz.robo.robot.ScriptThread;
@@ -15,7 +15,8 @@ import java.awt.*;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
-import static fr.poulpogaz.robo.main.TheGreatMachine.TILE_SIZE;
+import static fr.poulpogaz.robo.main.Robo.HEIGHT;
+import static fr.poulpogaz.robo.main.Robo.TILE_SIZE;
 
 public class GameState extends State {
 
@@ -23,12 +24,13 @@ public class GameState extends State {
     private static final LevelRenderer levelRenderer = LevelRenderer.getInstance();
 
     private static final int SCRIPT_GUI_WIDTH = 192;
-    private static final int LEVEL_RENDER_WIDTH = TheGreatMachine.WIDTH - SCRIPT_GUI_WIDTH;
+    private static final int LEVEL_RENDER_WIDTH = Robo.WIDTH - SCRIPT_GUI_WIDTH;
 
     private final ScriptGUI scriptGUI;
     private final Button playButton;
     private final Button stopButton;
     private final Button showInfo;
+    private final Button backButton;
     private final InfoGUI infoGui;
 
     private final ReportGui reportGui;
@@ -39,13 +41,10 @@ public class GameState extends State {
     public GameState() {
         super("GameState");
 
-        levelManager.initLevel();
-
         scriptGUI = new ScriptGUI();
-        scriptGUI.setBounds(LEVEL_RENDER_WIDTH, 0, SCRIPT_GUI_WIDTH, TheGreatMachine.HEIGHT);
+        scriptGUI.setBounds(LEVEL_RENDER_WIDTH, 0, SCRIPT_GUI_WIDTH, Robo.HEIGHT);
 
         infoGui = new InfoGUI();
-        infoGui.setText(levelManager.getCurrentLevel().getDescription());
 
         playButton = new Button(new ResourceLocation("play", ResourceLocation.GUI_ELEMENT));
         playButton.setBounds(5, 5, TILE_SIZE, TILE_SIZE);
@@ -60,6 +59,10 @@ public class GameState extends State {
         showInfo.setBounds(5, 15 + TILE_SIZE, TILE_SIZE, TILE_SIZE);
         showInfo.setReleaseListener(this::showInfo);
 
+        backButton = new Button(new ResourceLocation("back", ResourceLocation.GUI_ELEMENT));
+        backButton.setBounds(5, HEIGHT - TILE_SIZE - 5, TILE_SIZE, TILE_SIZE);
+        backButton.setReleaseListener(this::back);
+
         reportGui = new ReportGui();
         reportGui.setX(stopButton.getX() + stopButton.getWidth() + 60);
         reportGui.setY(5);
@@ -67,11 +70,25 @@ public class GameState extends State {
     }
 
     @Override
+    public void show() {
+        infoGui.setText(levelManager.getCurrentLevel().getDescription());
+
+        levelManager.initLevel();
+
+        Level level = levelManager.getCurrentLevel();
+
+        if (level.getScript() != null) {
+            scriptGUI.setScript(level.getScript());
+        }
+    }
+
+    @Override
     protected void renderBackground(Graphics2D g2d) {
-        levelRenderer.render(g2d, levelManager.getCurrentLevel(), LEVEL_RENDER_WIDTH, TheGreatMachine.HEIGHT);
+        levelRenderer.render(g2d, levelManager.getCurrentLevel(), LEVEL_RENDER_WIDTH, Robo.HEIGHT);
         playButton.render(g2d);
         stopButton.render(g2d);
         showInfo.render(g2d);
+        backButton.render(g2d);
 
         scriptGUI.render(g2d);
 
@@ -97,6 +114,7 @@ public class GameState extends State {
             playButton.update();
             stopButton.update();
             showInfo.update();
+            backButton.update();
         }
 
         if (isParsing) {
@@ -131,7 +149,7 @@ public class GameState extends State {
     }
 
     private void run() {
-        if (TheGreatMachine.getInstance().getTicks() % 30 == 0) {
+        if (Robo.getInstance().getTicks() % 30 == 0) {
             Level currentLevel = levelManager.getCurrentLevel();
 
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
@@ -163,12 +181,30 @@ public class GameState extends State {
         playButton.setActive(true);
         stopButton.setActive(false);
 
-        isRunning = false;
-        scriptGUI.highlightLine(-1);
-        levelManager.initLevel();
+        if (isRunning) {
+            isRunning = false;
+            scriptGUI.highlightLine(-1);
+            levelManager.initLevel();
+        } else if (isParsing) {
+            if (!scriptParser.isDone()) {
+                scriptParser.cancel(true);
+            }
+        }
+
+        reportGui.setVisible(false);
     }
 
     private void showInfo() {
         infoGui.setVisible(true);
+    }
+
+    private void back() {
+        if (isRunning || isParsing) {
+            stop();
+        }
+
+        levelManager.getCurrentLevel().setScript(scriptGUI.getScript());
+
+        manager.switchState(MainMenu.class);
     }
 }

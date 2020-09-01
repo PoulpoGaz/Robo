@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Cache.setRoot(System.getenv("APPDATA") + "/Robo");
 
-        View view = TheGreatMachine.getInstance();
+        View view = Robo.getInstance();
 
         Window window = new Window(view);
         window.start();

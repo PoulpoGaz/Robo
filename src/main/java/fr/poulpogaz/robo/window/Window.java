@@ -1,6 +1,6 @@
 package fr.poulpogaz.robo.window;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,7 +37,7 @@ public class Window extends JFrame {
     }
 
     private void initWindow() {
-        setName(view.getViewName());
+        setTitle(view.getViewName());
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         addWindowListener(new WindowHandler());
@@ -134,7 +134,7 @@ public class Window extends JFrame {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_OFF);
         g2d.setRenderingHint(RenderingHints.KEY_ALPHA_INTERPOLATION, RenderingHints.VALUE_ALPHA_INTERPOLATION_SPEED);
 
-        g2d.scale(TheGreatMachine.SCALE_FACTOR, TheGreatMachine.SCALE_FACTOR);
+        g2d.scale(Robo.SCALE_FACTOR, Robo.SCALE_FACTOR);
 
         view.render(g2d);
 

@@ -1,14 +1,13 @@
 package fr.poulpogaz.robo.states;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.window.MouseHandler;
 
 import java.awt.*;
 
 public abstract class State {
 
-    protected final MouseHandler mouse = TheGreatMachine.getInstance().getMouseHandler();
-    protected final StateManager manager = TheGreatMachine.getInstance().getStateManager();
+    protected final StateManager manager = Robo.getInstance().getStateManager();
 
     private final String name;
 

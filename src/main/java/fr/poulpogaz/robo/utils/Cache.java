@@ -34,6 +34,14 @@ public class Cache {
 
     public static void setRoot(String root) {
         ROOT = Path.of(root);
+
+        if (!exists(ROOT)) {
+            try {
+                Files.createDirectories(ROOT);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static Path of(String path) {

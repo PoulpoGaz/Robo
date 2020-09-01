@@ -1,7 +1,7 @@
 package fr.poulpogaz.robo.level;
 
 import fr.poulpogaz.robo.utils.TextureManager;
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.utils.ISprite;
 import fr.poulpogaz.robo.map.Map;
 import fr.poulpogaz.robo.map.Tile;
@@ -11,12 +11,12 @@ import fr.poulpogaz.robo.robot.Robot;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-import static fr.poulpogaz.robo.main.TheGreatMachine.TILE_SIZE;
+import static fr.poulpogaz.robo.main.Robo.TILE_SIZE;
 
 public class LevelRenderer {
 
     private static final LevelRenderer INSTANCE = new LevelRenderer();
-    private static final TextureManager textureManager = TheGreatMachine.getInstance().getTextureManager();
+    private static final TextureManager textureManager = Robo.getInstance().getTextureManager();
 
     private LevelRenderer() {
 

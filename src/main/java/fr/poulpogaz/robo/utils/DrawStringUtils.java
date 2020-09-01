@@ -1,6 +1,6 @@
 package fr.poulpogaz.robo.utils;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 
 import java.awt.*;
 
@@ -33,7 +33,7 @@ public class DrawStringUtils {
     }
 
     public static void drawStringCentered(Graphics2D g2d, String str, int y) {
-        drawStringCenteredBaseOn(g2d, str, y, 0, TheGreatMachine.WIDTH);
+        drawStringCenteredBaseOn(g2d, str, y, 0, Robo.WIDTH);
     }
 
     public static void drawStringCenteredBaseOn(Graphics2D g2d, String str, int y, int leftX, int rightX) {

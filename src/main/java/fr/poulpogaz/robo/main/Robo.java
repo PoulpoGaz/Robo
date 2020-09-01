@@ -1,5 +1,7 @@
 package fr.poulpogaz.robo.main;
 
+import fr.poulpogaz.robo.level.LevelManager;
+import fr.poulpogaz.robo.states.MainMenu;
 import fr.poulpogaz.robo.states.StateManager;
 import fr.poulpogaz.robo.utils.TextureManager;
 import fr.poulpogaz.robo.window.KeyHandler;
@@ -12,11 +14,11 @@ import org.apache.logging.log4j.Logger;
 import java.awt.*;
 
 
-public class TheGreatMachine extends Canvas implements View {
+public class Robo extends Canvas implements View {
 
-    private static final TheGreatMachine INSTANCE = new TheGreatMachine();
+    private static final Robo INSTANCE = new Robo();
 
-    private static final Logger LOGGER = LogManager.getLogger(TheGreatMachine.class);
+    private static final Logger LOGGER = LogManager.getLogger(Robo.class);
 
     public static final int SCALE_FACTOR = 2;
 
@@ -28,7 +30,7 @@ public class TheGreatMachine extends Canvas implements View {
     public static final int WINDOW_WIDTH = WIDTH * SCALE_FACTOR;
     public static final int WINDOW_HEIGHT = HEIGHT * SCALE_FACTOR;
 
-    public static final String NAME = "The great machine";
+    public static final String NAME = "Robo";
 
     public static final int TPS = 30;
 
@@ -42,7 +44,7 @@ public class TheGreatMachine extends Canvas implements View {
 
     private Font font;
 
-    private TheGreatMachine() {
+    private Robo() {
 
     }
 
@@ -60,7 +62,7 @@ public class TheGreatMachine extends Canvas implements View {
         textureManager = new TextureManager();
         stateManager = new StateManager();
         stateManager.loadStates();
-        stateManager.switchState("GameState");
+        stateManager.switchState(MainMenu.class);
     }
 
     @Override
@@ -75,7 +77,7 @@ public class TheGreatMachine extends Canvas implements View {
     @Override
     public void render(Graphics2D g2d) {
         if (font == null) {
-            font = new Font("monospaced", Font.PLAIN, 8);
+            font = new Font("Monospace", Font.PLAIN, 8);
         }
 
         g2d.setFont(font);
@@ -87,7 +89,7 @@ public class TheGreatMachine extends Canvas implements View {
 
     @Override
     public void terminate() {
-
+        LevelManager.getInstance().save();
     }
 
     @Override
@@ -141,7 +143,7 @@ public class TheGreatMachine extends Canvas implements View {
         return window.getTicks();
     }
 
-    public static TheGreatMachine getInstance() {
+    public static Robo getInstance() {
         return INSTANCE;
     }
 

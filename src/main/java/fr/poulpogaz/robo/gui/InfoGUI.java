@@ -1,6 +1,6 @@
 package fr.poulpogaz.robo.gui;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 
 import java.awt.*;
 
@@ -68,8 +68,8 @@ public class InfoGUI extends GuiElement {
             height += fm.getHeight();
         }
 
-        x = (TheGreatMachine.WIDTH - width) / 2;
-        y = (TheGreatMachine.HEIGHT - height) / 2;
+        x = (Robo.WIDTH - width) / 2;
+        y = (Robo.HEIGHT - height) / 2;
     }
 
     public void setText(String text) {

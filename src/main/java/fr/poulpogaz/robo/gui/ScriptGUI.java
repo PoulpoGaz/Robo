@@ -1,6 +1,6 @@
 package fr.poulpogaz.robo.gui;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.robot.Pos;
 import fr.poulpogaz.robo.window.KeyHandler;
 
@@ -10,7 +10,7 @@ import static java.awt.event.KeyEvent.*;
 
 public class ScriptGUI extends GuiElement {
 
-    private static final KeyHandler keyHandler = TheGreatMachine.getInstance().getKeyHandler();
+    private static final KeyHandler keyHandler = Robo.getInstance().getKeyHandler();
 
     private int caretPos = 0;
     private boolean isCaretMoving = false;
@@ -108,7 +108,7 @@ public class ScriptGUI extends GuiElement {
     }
 
     public void updateImpl() {
-        if (TheGreatMachine.getInstance().getTicks() % 15 == 0 && !isCaretMoving) {
+        if (Robo.getInstance().getTicks() % 15 == 0 && !isCaretMoving) {
             hideCaret = !hideCaret;
         }
 
@@ -294,6 +294,14 @@ public class ScriptGUI extends GuiElement {
 
     public String getScript() {
         return script;
+    }
+
+    public void setScript(String script) {
+        this.script = script;
+
+        nLines = script.split("(?<=\n)").length;
+
+        linesCached = null;
     }
 
     public int getWidth() {

@@ -1,13 +1,13 @@
 package fr.poulpogaz.robo.gui;
 
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.robot.Report;
 
 import java.awt.*;
 
 public class ReportGui extends GuiElement {
 
-    private static final int _1_SEC = TheGreatMachine.TPS;
+    private static final int _1_SEC = Robo.TPS;
     private static final int _3_SEC = _1_SEC * 3;
     private static final int _4_SEC = _1_SEC * 4;
 

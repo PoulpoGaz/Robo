@@ -3,7 +3,7 @@ package fr.poulpogaz.robo.utils;
 import fr.poulpogaz.json.IJsonReader;
 import fr.poulpogaz.json.JsonException;
 import fr.poulpogaz.json.JsonReader;
-import fr.poulpogaz.robo.main.TheGreatMachine;
+import fr.poulpogaz.robo.main.Robo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -85,7 +85,7 @@ public final class TextureManager {
             int x = reader.nextInt();
             int y = reader.nextInt();
 
-            BufferedImage subImage = image.getSubimage(x * TheGreatMachine.TILE_SIZE, y * TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE, TheGreatMachine.TILE_SIZE);
+            BufferedImage subImage = image.getSubimage(x * Robo.TILE_SIZE, y * Robo.TILE_SIZE, Robo.TILE_SIZE, Robo.TILE_SIZE);
 
             reader.endArray();
 
@@ -96,16 +96,17 @@ public final class TextureManager {
     }
 
     private BufferedImage readImage(ResourceLocation resource) {
+        BufferedImage image = IMAGES.get(resource);
+
+        if (image != null) {
+            return image;
+        }
+
         try {
             LOGGER.info("Reading image at {}", resource);
 
-            BufferedImage image = IMAGES.get(resource);
-
-            if (image == null) {
-                image = ImageIO.read(resource.createInputStream());
-
-                IMAGES.put(resource, image);
-            }
+            image = ImageIO.read(resource.createInputStream());
+            IMAGES.put(resource, image);
 
             return image;
         } catch (IOException e) {
