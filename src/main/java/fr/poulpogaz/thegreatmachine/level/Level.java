@@ -4,15 +4,13 @@ import fr.poulpogaz.json.IJsonReader;
 import fr.poulpogaz.json.JsonException;
 import fr.poulpogaz.json.JsonReader;
 import fr.poulpogaz.thegreatmachine.map.Map;
-import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
 import fr.poulpogaz.thegreatmachine.map.Tile;
 import fr.poulpogaz.thegreatmachine.map.Tiles;
 import fr.poulpogaz.thegreatmachine.robot.Robot;
+import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import static fr.poulpogaz.thegreatmachine.main.TheGreatMachine.TILE_SIZE;
 
 public abstract class Level implements Cloneable {
 
@@ -28,6 +26,14 @@ public abstract class Level implements Cloneable {
         this.levelIndex = levelIndex;
 
         readData(ResourceLocation.createInputStreamStatic(Integer.toString(levelIndex), ResourceLocation.LEVEL));
+    }
+
+    public void init(Robot robot, Map map) {
+
+    }
+
+    public void reset() {
+
     }
 
     public abstract boolean check();

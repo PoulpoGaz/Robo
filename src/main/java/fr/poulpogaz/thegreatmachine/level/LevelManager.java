@@ -22,6 +22,10 @@ public final class LevelManager {
         currentLevel = levels.get(index);
     }
 
+    public void resetCurrentLevel() {
+        currentLevel.reset();
+    }
+
     public Level getCurrentLevel() {
         return currentLevel;
     }

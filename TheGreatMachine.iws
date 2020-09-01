@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/ReportGui.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/EmptyOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/GoTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/If.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Label.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Loop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Move.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Operation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Report.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptExecutor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TheGreatMachine.iws" beforeDir="false" afterPath="$PROJECT_DIR$/TheGreatMachine.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/DrawStringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/utils/DrawStringUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GuiElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/gui/GuiElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/map/Map.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Pos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Pos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/window/Window.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window$WindowHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window$WindowHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/thegreatmachine/window/Window.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/level/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/thegreatmachine/robot/ScriptThread.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598876337991</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="basic script executor">
+      <created>1598895897740</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1598895897740</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -176,7 +164,8 @@
     <MESSAGE value="LOTS of changes:&#10;-level loader and level manager&#10;-texture manager&#10;-state manager&#10;-script gui&#10;-some basic classes to make things clear in my head (Pos, Robot, ... classes)" />
     <MESSAGE value="better script gui" />
     <MESSAGE value="gui buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="gui buttons" />
+    <MESSAGE value="basic script executor" />
+    <option name="LAST_COMMIT_MESSAGE" value="basic script executor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598875859619">
@@ -195,42 +184,42 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598780539605" />
-    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598876336182">
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598895895741">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598876336182" />
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom" timestamp="1598895754605">
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598895895741" />
+    <state width="1556" height="269" key="GridCell.Tab.0.bottom" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598895754605" />
-    <state width="1556" height="181" key="GridCell.Tab.0.center" timestamp="1598895754605">
+    <state width="1556" height="269" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.0.center" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598895754605" />
-    <state width="1556" height="181" key="GridCell.Tab.0.left" timestamp="1598895754605">
+    <state width="1556" height="269" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.0.left" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598895754605" />
-    <state width="1556" height="181" key="GridCell.Tab.0.right" timestamp="1598895754605">
+    <state width="1556" height="269" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.0.right" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="181" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598895754605" />
-    <state width="1556" height="270" key="GridCell.Tab.1.bottom" timestamp="1598883095859">
+    <state width="1556" height="269" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.1.bottom" timestamp="1598896841703">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="270" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598883095859" />
-    <state width="1556" height="270" key="GridCell.Tab.1.center" timestamp="1598883095859">
+    <state width="1556" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598896841703" />
+    <state width="1556" height="269" key="GridCell.Tab.1.center" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="270" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1598883095859" />
-    <state width="1556" height="270" key="GridCell.Tab.1.left" timestamp="1598883095859">
+    <state width="1556" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.1.left" timestamp="1598896841702">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="270" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1598883095859" />
-    <state width="1556" height="270" key="GridCell.Tab.1.right" timestamp="1598883095859">
+    <state width="1556" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1598896841702" />
+    <state width="1556" height="269" key="GridCell.Tab.1.right" timestamp="1598896841703">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="270" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1598883095859" />
+    <state width="1556" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1598896841703" />
     <state x="550" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1598711898579">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

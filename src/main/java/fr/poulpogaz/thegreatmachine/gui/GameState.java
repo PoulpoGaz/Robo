@@ -5,10 +5,8 @@ import fr.poulpogaz.thegreatmachine.level.LevelManager;
 import fr.poulpogaz.thegreatmachine.level.LevelRenderer;
 import fr.poulpogaz.thegreatmachine.main.TheGreatMachine;
 import fr.poulpogaz.thegreatmachine.robot.Report;
-import fr.poulpogaz.thegreatmachine.robot.ScriptExecutor;
 import fr.poulpogaz.thegreatmachine.robot.ScriptThread;
 import fr.poulpogaz.thegreatmachine.utils.ResourceLocation;
-import org.apache.logging.log4j.spi.LoggerRegistry;
 
 import java.awt.*;
 import java.util.concurrent.ExecutionException;
@@ -81,41 +79,52 @@ public class GameState extends State {
         stopButton.update();
 
         if (isParsing) {
-            if (scriptParser.isDone()) {
-                isParsing = false;
-
-                Report report;
-                try {
-                    report = scriptParser.get();
-                } catch (InterruptedException | ExecutionException e) {
-                    e.printStackTrace();
-
-                    report = new Report("Internal error", -1, GameState.class);
-                }
-
-                reportGui.setReport(report);
-
-                if (report.isSuccess()) {
-                    isRunning = true;
-                }
-            }
+            parse();
         } else if (isRunning) {
-            if (TheGreatMachine.getInstance().getTicks() % 30 == 0) {
-                Level currentLevel = levelManager.getCurrentLevel();
-
-                boolean levelFinished = currentLevel.check();
-
-                if (ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot()) || levelFinished) {
-                    isRunning = false;
-
-                    if (levelFinished) {
-                        System.out.println("LEVEL FINISHED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                    }
-                }
-            }
+            run();
         }
 
         reportGui.update();
+    }
+
+    private void parse() {
+        if (scriptParser.isDone()) {
+            isParsing = false;
+
+            Report report;
+            try {
+                report = scriptParser.get();
+            } catch (InterruptedException | ExecutionException e) {
+                e.printStackTrace();
+
+                report = new Report("Internal error", -1, GameState.class);
+            }
+
+            reportGui.setReport(report);
+
+            if (report.isSuccess()) {
+                isRunning = true;
+            }
+        }
+    }
+
+    private void run() {
+        if (TheGreatMachine.getInstance().getTicks() % 30 == 0) {
+            Level currentLevel = levelManager.getCurrentLevel();
+
+            boolean levelFinished = currentLevel.check();
+
+            boolean end = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
+            if (end || levelFinished) {
+                isRunning = false;
+
+                if (levelFinished) {
+                    manager.exit();
+                } else {
+                    levelManager.resetCurrentLevel();
+                }
+            }
+        }
     }
 
     private void play() {
@@ -129,5 +138,8 @@ public class GameState extends State {
     private void stop() {
         playButton.setActive(true);
         stopButton.setActive(false);
+
+        isRunning = false;
+        levelManager.resetCurrentLevel();
     }
 }
