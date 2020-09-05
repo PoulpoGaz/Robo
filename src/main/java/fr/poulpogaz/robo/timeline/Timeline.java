@@ -1,8 +1,8 @@
 package fr.poulpogaz.robo.timeline;
 
 import fr.poulpogaz.json.*;
-import fr.poulpogaz.robo.level.FirstLevel;
 import fr.poulpogaz.robo.level.Level;
+import fr.poulpogaz.robo.level.Levels;
 import fr.poulpogaz.robo.states.GameState;
 import fr.poulpogaz.robo.states.StateManager;
 import fr.poulpogaz.robo.states.StoryState;
@@ -37,7 +37,7 @@ public class Timeline {
      * INITIALISATION
      */
     public void load() {
-        ArrayList<Level> levels = loadLevels();
+        ArrayList<Level> levels = Levels.getLevels();
         ArrayList<StoryLog> storyLogs = loadStory();
 
         nodes.addAll(levels);
@@ -58,14 +58,6 @@ public class Timeline {
                 offset++;
             }
         }
-    }
-
-    private ArrayList<Level> loadLevels() {
-        ArrayList<Level> levels = new ArrayList<>();
-
-        levels.add(new FirstLevel());
-
-        return levels;
     }
 
     private ArrayList<StoryLog> loadStory() {

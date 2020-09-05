@@ -1,6 +1,7 @@
 package fr.poulpogaz.robo.states;
 
 import fr.poulpogaz.robo.gui.*;
+import fr.poulpogaz.robo.level.CheckReport;
 import fr.poulpogaz.robo.level.Level;
 import fr.poulpogaz.robo.level.LevelRenderer;
 import fr.poulpogaz.robo.main.Robo;
@@ -31,6 +32,8 @@ public class GameState extends State {
     private final TexturedButton showInfo;
     private final TexturedButton backButton;
     private final GUIBox infoGui;
+    private final GUIBox levelFinished;
+    private final GUIBox levelFailed;
 
     private final ReportGui reportGui;
     private Future<Report> scriptParser;
@@ -47,6 +50,21 @@ public class GameState extends State {
         infoGui.setTitle("** INFO **");
         infoGui.addButton(new StringButton("OK", () -> infoGui.setVisible(false)));
 
+        levelFinished = new GUIBox();
+        levelFinished.setTitle("Level finished!");
+        levelFinished.addButton(new StringButton("OK", this::levelFinished));
+
+        levelFailed = new GUIBox();
+        levelFailed.setTitle("Level failed...");
+        levelFailed.addButton(new StringButton("OK", () -> {
+            stop();
+            levelFailed.setVisible(false);
+        }));
+
+        boxes.add(infoGui);
+        boxes.add(levelFailed);
+        boxes.add(levelFinished);
+
         playButton = new TexturedButton(new ResourceLocation("play", ResourceLocation.GUI_ELEMENT));
         playButton.setBounds(5, 5, TILE_SIZE, TILE_SIZE);
         playButton.setReleaseListener(this::play);
@@ -58,7 +76,7 @@ public class GameState extends State {
 
         showInfo = new TexturedButton(new ResourceLocation("info", ResourceLocation.GUI_ELEMENT));
         showInfo.setBounds(5, 15 + TILE_SIZE, TILE_SIZE, TILE_SIZE);
-        showInfo.setReleaseListener(this::showInfo);
+        showInfo.setReleaseListener(() -> infoGui.setVisible(true));
 
         backButton = new TexturedButton(new ResourceLocation("back", ResourceLocation.GUI_ELEMENT));
         backButton.setBounds(5, HEIGHT - TILE_SIZE - 5, TILE_SIZE, TILE_SIZE);
@@ -77,8 +95,13 @@ public class GameState extends State {
         currentLevel = (Level) timeline.getCurrentNode();
         currentLevel.init();
 
+        levelFinished.setVisible(false);
+        levelFailed.setVisible(false);
+
         infoGui.setText(currentLevel.getDescription());
         infoGui.setVisible(true);
+
+        scriptGUI.reset();
 
         if (currentLevel.getScript() != null) {
             scriptGUI.setScript(currentLevel.getScript());
@@ -111,12 +134,11 @@ public class GameState extends State {
         }
 
         reportGui.render(g2d);
-        infoGui.render(g2d);
     }
 
     @Override
     public void update(float delta) {
-        if (!infoGui.isVisible()) {
+        if (!updateGUIBoxes()) {
             scriptGUI.update();
 
             playButton.update();
@@ -132,7 +154,6 @@ public class GameState extends State {
         }
 
         reportGui.update();
-        infoGui.update();
     }
 
     private void parse() {
@@ -148,30 +169,33 @@ public class GameState extends State {
                 report = new Report("Internal error", -1, GameState.class);
             }
 
-            reportGui.setReport(report);
-
             if (report.isSuccess()) {
                 isRunning = true;
+            } else {
+                stop();
             }
+
+            reportGui.setReport(report);
         }
     }
 
     private void run() {
         if (Robo.getInstance().getTicks() % 30 == 0) {
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
-            boolean levelFinished = currentLevel.check();
+            CheckReport checkReport = currentLevel.check();
 
-            if (report.isEnd() || levelFinished) {
+            if (!report.isEnd()) {
+                scriptGUI.highlightLine(report.getLine());
+            }
+
+            if (checkReport != CheckReport.OK || report.isEnd()) {
                 isRunning = false;
 
-                if (levelFinished) {
-                    timeline.nextNode();
-                    back();
-                } else {
-                    stop();
+                if (checkReport == CheckReport.LEVEL_FINISHED) {
+                    levelFinished.setVisible(true);
+                } else if (checkReport == CheckReport.LEVEL_FAILED || report.isEnd()) {
+                    levelFailed.setVisible(true);
                 }
-            } else {
-                scriptGUI.highlightLine(report.getLine());
             }
         }
     }
@@ -180,7 +204,7 @@ public class GameState extends State {
         playButton.setActive(false);
         stopButton.setActive(true);
 
-        scriptParser = ScriptThread.parse(scriptGUI.getScript());
+        scriptParser = ScriptThread.parse(scriptGUI.getScript(), currentLevel.getAvailableOperations());
         isParsing = true;
     }
 
@@ -190,7 +214,6 @@ public class GameState extends State {
 
         scriptGUI.highlightLine(-1);
         currentLevel.init();
-
 
         if (isParsing) {
             if (!scriptParser.isDone()) {
@@ -205,8 +228,9 @@ public class GameState extends State {
         reportGui.setVisible(false);
     }
 
-    private void showInfo() {
-        infoGui.setVisible(true);
+    private void levelFinished() {
+        timeline.nextNode();
+        back();
     }
 
     private void back() {

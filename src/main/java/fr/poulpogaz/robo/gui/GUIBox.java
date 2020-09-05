@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class GUIBox extends GuiElement {
 
-    private String title;
+    private String title = "";
 
-    private String text;
+    private String text = "";
     private boolean isValid = false;
 
     private ArrayList<StringButton> buttons;
@@ -43,13 +43,15 @@ public class GUIBox extends GuiElement {
         int x = (width - fm.stringWidth(title)) / 2;
         g2d.drawString(title, x, yText);
 
-        String[] lines = text.split("\n");
+        if (!text.isEmpty()) {
+            String[] lines = text.split("\n");
 
-        int fontHeight = fm.getHeight();
-        for (String line : lines) {
-            yText += fontHeight;
+            int fontHeight = fm.getHeight();
+            for (String line : lines) {
+                yText += fontHeight;
 
-            g2d.drawString(line, 8, yText);
+                g2d.drawString(line, 8, yText);
+            }
         }
 
         x = (width - (getButtonsWidth() + (buttons.size() - 1) * 5)) / 2;

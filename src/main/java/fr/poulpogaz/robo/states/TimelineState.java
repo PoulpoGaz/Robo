@@ -33,7 +33,7 @@ public class TimelineState extends State {
     private static final int NODE_SIZE = 64;
     private static final int NODE_SIZE_HALF = NODE_SIZE / 2;
 
-    private static final int MAX_OFFSET = -(NODE_SIZE + LINE_LENGTH - 2 * NODE_SIZE_HALF) * (timeline.getLength() - 1);
+    private static final int MAX_OFFSET = getOffset(timeline.getLength() - 1);
 
     private static final int X_START = (WIDTH - NODE_SIZE) / 2;
     private static final int Y_START = (HEIGHT - NODE_SIZE) / 2;
@@ -61,7 +61,7 @@ public class TimelineState extends State {
 
     @Override
     public void show() {
-        xOffset = 0;
+        xOffset = getOffset(timeline.getUnlockedNodes());
     }
 
     @Override
@@ -151,7 +151,7 @@ public class TimelineState extends State {
 
     @Override
     public void update(float delta) {
-        xOffset = xOffset + 15 * mouse.wheel();
+        xOffset = xOffset + 25 * mouse.wheel();
 
         if (xOffset > 0) {
             xOffset = 0;
@@ -187,5 +187,9 @@ public class TimelineState extends State {
     private void back() {
         timeline.save();
         manager.switchState(MainMenu.class);
+    }
+
+    private static int getOffset(int level) {
+        return -(NODE_SIZE + LINE_LENGTH - 2 * NODE_SIZE_HALF) * level;
     }
 }

@@ -1,8 +1,11 @@
 package fr.poulpogaz.robo.level;
 
 import fr.poulpogaz.robo.map.Map;
+import fr.poulpogaz.robo.robot.Operation;
 import fr.poulpogaz.robo.robot.Robot;
 import fr.poulpogaz.robo.timeline.Node;
+
+import java.util.List;
 
 public abstract class Level implements Node {
 
@@ -29,7 +32,7 @@ public abstract class Level implements Node {
         robot = null;
     }
 
-    public abstract boolean check();
+    public abstract CheckReport check();
 
     public int getWidth() {
         return map.getWidth();
@@ -58,6 +61,8 @@ public abstract class Level implements Node {
     public String getScript() {
         return script;
     }
+
+    public abstract List<Class<? extends Operation>> getAvailableOperations();
 
     public int getIndex() {
         return levelIndex;

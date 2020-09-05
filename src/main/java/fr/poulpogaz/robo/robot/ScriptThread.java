@@ -2,6 +2,7 @@ package fr.poulpogaz.robo.robot;
 
 import fr.poulpogaz.robo.map.Map;
 
+import java.util.List;
 import java.util.concurrent.*;
 
 public class ScriptThread {
@@ -9,8 +10,8 @@ public class ScriptThread {
     private static final ExecutorService executor;
     private static final ScriptExecutor scriptExecutor = ScriptExecutor.getInstance();
 
-    public static Future<Report> parse(String script) {
-        return executor.submit(() -> scriptExecutor.parse(script));
+    public static Future<Report> parse(String script, List<Class<? extends Operation>> availableOperations) {
+        return executor.submit(() -> scriptExecutor.parse(script, availableOperations));
     }
 
     public static ExecuteReport executeOneLine(Map map, Robot robot) {

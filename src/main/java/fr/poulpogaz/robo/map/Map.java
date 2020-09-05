@@ -18,7 +18,7 @@ public class Map {
         if (0 <= pos.x && pos.x < width && 0 <= pos.y && pos.y < height) {
             Tile tile = get(pos);
 
-            return !tile.isVoid() && !tile.isSolid();
+            return !tile.isSolid();
         }
 
         return false;

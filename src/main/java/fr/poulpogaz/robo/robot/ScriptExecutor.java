@@ -4,12 +4,14 @@ import fr.poulpogaz.robo.map.Map;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class ScriptExecutor {
 
     private static final ScriptExecutor INSTANCE = new ScriptExecutor();
     private static final Logger LOGGER = LogManager.getLogger(ScriptExecutor.class);
 
-    private String script;
     private String[] lines;
     private int currentLine;
 
@@ -19,12 +21,13 @@ public final class ScriptExecutor {
 
     }
 
-    public Report parse(String script) {
+    public Report parse(String script, List<Class<? extends Operation>> availableOperations) {
         LOGGER.info("Parsing script");
+
+        currentLine = 0;
 
         long time = System.currentTimeMillis();
 
-        this.script = script;
         this.lines = script.split("(?<=\n)");
 
         operations = new Operation[lines.length];
@@ -32,7 +35,7 @@ public final class ScriptExecutor {
         createEmptyOperationsAndRemoveLineFeed();
 
         // first we parse labels
-        Report report = parseLabels();
+        Report report = parseLabels(availableOperations.contains(Label.class));
         if (report != Report.TRUE) {
             return report;
         }
@@ -52,8 +55,12 @@ public final class ScriptExecutor {
                 case "goto" -> operation = new GoTo(i);
                 case "move" -> operation = new Move(i);
                 default -> {
-                    return new Report("Unknown operation: \"" + parts[0] + "\"", i, ScriptExecutor.class);
+                    return unknownOperation(parts[0], i);
                 }
+            }
+
+            if (!availableOperations.contains(operation.getClass())) {
+                return unknownOperation(parts[0], i);
             }
 
             report = operation.parse(operations, lines, parts);
@@ -84,13 +91,17 @@ public final class ScriptExecutor {
         }
     }
 
-    private Report parseLabels() {
+    private Report parseLabels(boolean allowLabel) {
         for (int i = 0, nLines = lines.length; i < nLines; i++) {
             String line = lines[i];
 
             String[] parts = line.split(" ");
 
             if (parts[0].equals("label")) {
+                if (!allowLabel) {
+                    return unknownOperation(parts[0], i);
+                }
+
                 Label label = new Label(i);
                 Report report = label.parse(operations, lines, parts);
 
@@ -103,6 +114,10 @@ public final class ScriptExecutor {
         }
 
         return Report.TRUE;
+    }
+
+    private Report unknownOperation(String operation, int line) {
+        return new Report("Unknown operation: \"" + operation + "\"", line, ScriptExecutor.class);
     }
 
     /**

@@ -26,6 +26,16 @@ public class ScriptGUI extends GuiElement {
 
     }
 
+    public void reset() {
+        caretPos = 0;
+        isCaretMoving = false;
+        hideCaret = false;
+        script = "";
+        linesCached = null;
+        nLines = 1;
+        highlightedLine = -1;
+    }
+
     public void renderImpl(Graphics2D g2d) {
         drawBackground(g2d);
 
@@ -191,22 +201,17 @@ public class ScriptGUI extends GuiElement {
     private void removeChar() {
         if (caretPos != 0 && script.length() != 0) {
 
-            if (caretPos == script.length()) {
-                if (script.charAt(caretPos - 1) == '\n') {
-                    nLines--;
-                }
+            if (script.charAt(caretPos - 1) == '\n') {
+                nLines--;
+            }
 
+            if (caretPos == script.length()) {
                 script = script.substring(0, script.length() - 1);
             } else {
                 String firstPart = script.substring(0, caretPos - 1);
                 String secondPart = script.substring(caretPos);
 
                 script = firstPart + secondPart;
-
-
-                if (script.charAt(caretPos) == '\n') {
-                    nLines--;
-                }
             }
             caretPos--;
             linesCached = null;
@@ -302,6 +307,7 @@ public class ScriptGUI extends GuiElement {
         nLines = script.split("(?<=\n)").length;
 
         linesCached = null;
+        caretPos = 0;
     }
 
     public int getWidth() {

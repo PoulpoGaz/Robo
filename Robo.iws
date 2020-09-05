@@ -1,37 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="add story and timeline object (object that control player advancement)">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/EndState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StoryState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/TimelineState.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/StoryLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprite/timeline_level.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/sprite/timeline_story.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/story/story.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/timeline.png" afterDir="false" />
+    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/CheckReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DestinationLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Levels.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/3.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Robo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Robo.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/StringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/StringButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/TexturedGuiElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/TexturedGuiElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/GUIBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/GUIBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/ScriptGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/ScriptGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/FirstLevel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Robo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Robo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Tiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Tiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/CrateTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/CrateTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/DestinationTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/DestinationTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/VoidTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/VoidTile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/WallTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/WallTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Map.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/MainMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/State.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StateManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/BackgroundThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ImageUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ResourceLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ResourceLocation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/TextureManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/TimelineState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/TimelineState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/levels/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levels/1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/story/story.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story/story.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/gui.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/gui.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/main_menu.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/main_menu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/tileset.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/tileset.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/textures/timeline.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/textures/timeline.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +37,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -89,7 +83,7 @@
       <recent name="C:\Users\Valentin\JavaProject\Robo\src\fr\poulpogaz\thegreatmachine\window" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -123,6 +117,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Build" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+                <option value="assembly:single" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="TestNG">
       <option name="TEST_OBJECT" value="CLASS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -141,6 +161,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Maven.Build" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -223,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598979587294</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add the beginning of the story and a timeline object (object that control player advancement. Also replace the old LevelManager)">
+      <created>1599300832027</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1599300832027</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -240,17 +271,18 @@
     <MESSAGE value="main menu and save" />
     <MESSAGE value="add z warning in the main menu" />
     <MESSAGE value="add story and timeline object (object that control player advancement)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add story and timeline object (object that control player advancement)" />
+    <MESSAGE value="add the beginning of the story and a timeline object (object that control player advancement. Also replace the old LevelManager)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add the beginning of the story and a timeline object (object that control player advancement. Also replace the old LevelManager)" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598875859619">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599301416516">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598875859619" />
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599234278344">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1599301416516" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599304486876">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1599234278344" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1599304486876" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -263,30 +295,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598956613690" />
-    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1599300727119">
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1599300827046">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599300727119" />
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599300827046" />
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1598948351194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1598948351194" />
-    <state width="1556" height="226" key="GridCell.Tab.0.bottom" timestamp="1599300727401">
+    <state width="1556" height="172" key="GridCell.Tab.0.bottom" timestamp="1599308041481">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="226" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599300727401" />
-    <state width="1556" height="226" key="GridCell.Tab.0.center" timestamp="1599300727400">
+    <state width="1556" height="172" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599308041481" />
+    <state width="1556" height="172" key="GridCell.Tab.0.center" timestamp="1599308041480">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="226" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599300727400" />
-    <state width="1556" height="226" key="GridCell.Tab.0.left" timestamp="1599300727400">
+    <state width="1556" height="172" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599308041480" />
+    <state width="1556" height="172" key="GridCell.Tab.0.left" timestamp="1599308041479">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="226" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599300727400" />
-    <state width="1556" height="226" key="GridCell.Tab.0.right" timestamp="1599300727401">
+    <state width="1556" height="172" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599308041479" />
+    <state width="1556" height="172" key="GridCell.Tab.0.right" timestamp="1599308041480">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="226" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599300727401" />
+    <state width="1556" height="172" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599308041480" />
     <state width="1556" height="268" key="GridCell.Tab.1.bottom" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -46,8 +46,8 @@ public class MainMenu extends State {
 
     @Override
     public void show() {
-        index = 0;
-        hasSave = null;
+        hasSave = timeline.hasSave();
+        index = hasSave ? 1 : 0;
         warning.setVisible(false);
     }
 
@@ -62,10 +62,6 @@ public class MainMenu extends State {
     protected void renderForeground(Graphics2D g2d) {
         if (font == null) {
             font = g2d.getFont().deriveFont(16f);
-        }
-
-        if (hasSave == null) {
-            hasSave = timeline.hasSave();
         }
 
         drawMenu(g2d);
@@ -101,10 +97,6 @@ public class MainMenu extends State {
 
     @Override
     public void update(float delta) {
-        if (hasSave == null) {
-            hasSave = timeline.hasSave();
-        }
-
         if (!warning.isVisible()) {
             moveCursor();
 
