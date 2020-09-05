@@ -2,8 +2,9 @@ package fr.poulpogaz.robo.level;
 
 import fr.poulpogaz.robo.map.Map;
 import fr.poulpogaz.robo.robot.Robot;
+import fr.poulpogaz.robo.timeline.Node;
 
-public abstract class Level {
+public abstract class Level implements Node {
 
     private final int levelIndex;
     private LevelData data;
@@ -60,5 +61,10 @@ public abstract class Level {
 
     public int getIndex() {
         return levelIndex;
+    }
+
+    @Override
+    public int getType() {
+        return LEVEL_NODE;
     }
 }

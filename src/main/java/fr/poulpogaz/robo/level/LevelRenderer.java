@@ -1,12 +1,12 @@
 package fr.poulpogaz.robo.level;
 
-import fr.poulpogaz.robo.utils.TextureManager;
-import fr.poulpogaz.robo.main.Robo;
-import fr.poulpogaz.robo.utils.ISprite;
 import fr.poulpogaz.robo.map.Map;
 import fr.poulpogaz.robo.map.Tile;
+import fr.poulpogaz.robo.map.Tiles;
 import fr.poulpogaz.robo.robot.Pos;
 import fr.poulpogaz.robo.robot.Robot;
+import fr.poulpogaz.robo.utils.ISprite;
+import fr.poulpogaz.robo.utils.TextureManager;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -16,10 +16,16 @@ import static fr.poulpogaz.robo.main.Robo.TILE_SIZE;
 public class LevelRenderer {
 
     private static final LevelRenderer INSTANCE = new LevelRenderer();
-    private static final TextureManager textureManager = Robo.getInstance().getTextureManager();
+    private static final TextureManager textureManager = TextureManager.getInstance();
 
     private LevelRenderer() {
 
+    }
+
+    public void init() {
+        for (Tile tile : Tiles.getTiles()) {
+            textureManager.loadTexture(tile.getResourceLocation());
+        }
     }
 
     public void render(Graphics2D g2d, Level level, int width, int height) {

@@ -51,12 +51,18 @@ public class StringButton extends GuiElement {
             computeBounds(fm);
         }
 
-        drawBackground(g2d, 3, new Color(44, 44, 44), new Color(25, 25, 25));
+        if (pressed) {
+            drawBackground(g2d, 3, new Color(68, 64, 64), new Color(25, 25, 25));
+        } else if (hovered) {
+            drawBackground(g2d, 3, new Color(55, 55, 55), new Color(25, 25, 25));
+        } else {
+            drawBackground(g2d, 3, new Color(44, 44, 44), new Color(25, 25, 25));
+        }
 
         g2d.setColor(FontColor.FOREGROUND);
 
         int x = (width - fm.stringWidth(text)) / 2;
-        int y = (height + fm.getAscent()) / 2;
+        int y = (height - fm.getHeight()) / 2 + fm.getAscent();
 
         g2d.drawString(text, x, y);
     }

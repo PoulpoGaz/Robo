@@ -8,6 +8,8 @@ import java.util.HashMap;
 
 public class StateManager {
 
+    private static final StateManager INSTANCE = new StateManager();
+
     private static final Logger LOGGER = LogManager.getLogger(StateManager.class);
 
     private final HashMap<Class<?>, State> STATE_MAP;
@@ -16,13 +18,15 @@ public class StateManager {
 
     private boolean exit = false;
 
-    public StateManager() {
+    private StateManager() {
         STATE_MAP = new HashMap<>();
     }
 
     public void loadStates() {
-        add(new MainMenu(), MainMenu.class);
-        add(new GameState(), GameState.class);
+        add(new MainMenu());
+        add(new GameState());
+        add(new StoryState());
+        add(new TimelineState());
     }
 
     public void update(float delta) {
@@ -33,15 +37,15 @@ public class StateManager {
         currentState.render(g);
     }
 
-    private <T extends State> void add(T state, Class<T> class_) {
-        STATE_MAP.put(class_, state);
+    private void add(State state) {
+        STATE_MAP.put(state.getClass(), state);
     }
 
     public State getState(Class<? extends State> class_) {
         return STATE_MAP.get(class_);
     }
 
-    public void switchState(Class<?> class_) {
+    public void switchState(Class<? extends State> class_) {
         State g = STATE_MAP.get(class_);
 
         if (g != null) {
@@ -67,5 +71,9 @@ public class StateManager {
 
     public boolean requireExit() {
         return exit;
+    }
+
+    public static StateManager getInstance() {
+        return INSTANCE;
     }
 }

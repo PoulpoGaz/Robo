@@ -2,12 +2,12 @@ package fr.poulpogaz.robo.states;
 
 import fr.poulpogaz.robo.gui.*;
 import fr.poulpogaz.robo.level.Level;
-import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.level.LevelRenderer;
 import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.robot.ExecuteReport;
 import fr.poulpogaz.robo.robot.Report;
 import fr.poulpogaz.robo.robot.ScriptThread;
+import fr.poulpogaz.robo.timeline.Timeline;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 
 import java.awt.*;
@@ -19,7 +19,7 @@ import static fr.poulpogaz.robo.main.Robo.TILE_SIZE;
 
 public class GameState extends State {
 
-    private static final LevelManager levelManager = LevelManager.getInstance();
+    private static final Timeline timeline = Timeline.getInstance();
     private static final LevelRenderer levelRenderer = LevelRenderer.getInstance();
 
     private static final int SCRIPT_GUI_WIDTH = 192;
@@ -37,9 +37,9 @@ public class GameState extends State {
     private boolean isParsing = false;
     private boolean isRunning = false;
 
-    public GameState() {
-        super("GameState");
+    private Level currentLevel;
 
+    public GameState() {
         scriptGUI = new ScriptGUI();
         scriptGUI.setBounds(LEVEL_RENDER_WIDTH, 0, SCRIPT_GUI_WIDTH, Robo.HEIGHT);
 
@@ -68,24 +68,31 @@ public class GameState extends State {
         reportGui.setX(stopButton.getX() + stopButton.getWidth() + 60);
         reportGui.setY(5);
         reportGui.setMaxWidth(200);
+
+        levelRenderer.init();
     }
 
     @Override
     public void show() {
-        levelManager.initLevel();
+        currentLevel = (Level) timeline.getCurrentNode();
+        currentLevel.init();
 
-        Level level = levelManager.getCurrentLevel();
+        infoGui.setText(currentLevel.getDescription());
+        infoGui.setVisible(true);
 
-        infoGui.setText(level.getDescription());
-
-        if (level.getScript() != null) {
-            scriptGUI.setScript(level.getScript());
+        if (currentLevel.getScript() != null) {
+            scriptGUI.setScript(currentLevel.getScript());
+        } else {
+            scriptGUI.setScript("");
         }
     }
 
     @Override
     protected void renderBackground(Graphics2D g2d) {
-        levelRenderer.render(g2d, levelManager.getCurrentLevel(), LEVEL_RENDER_WIDTH, Robo.HEIGHT);
+        g2d.setColor(Color.BLACK);
+        g2d.fillRect(0, 0, LEVEL_RENDER_WIDTH, HEIGHT);
+
+        levelRenderer.render(g2d, currentLevel, LEVEL_RENDER_WIDTH, HEIGHT);
         playButton.render(g2d);
         stopButton.render(g2d);
         showInfo.render(g2d);
@@ -151,8 +158,6 @@ public class GameState extends State {
 
     private void run() {
         if (Robo.getInstance().getTicks() % 30 == 0) {
-            Level currentLevel = levelManager.getCurrentLevel();
-
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
             boolean levelFinished = currentLevel.check();
 
@@ -160,7 +165,8 @@ public class GameState extends State {
                 isRunning = false;
 
                 if (levelFinished) {
-                    manager.exit();
+                    timeline.nextNode();
+                    back();
                 } else {
                     stop();
                 }
@@ -182,15 +188,19 @@ public class GameState extends State {
         playButton.setActive(true);
         stopButton.setActive(false);
 
-        if (isRunning) {
-            isRunning = false;
-            scriptGUI.highlightLine(-1);
-            levelManager.initLevel();
-        } else if (isParsing) {
+        scriptGUI.highlightLine(-1);
+        currentLevel.init();
+
+
+        if (isParsing) {
             if (!scriptParser.isDone()) {
                 scriptParser.cancel(true);
+                scriptParser = null;
             }
         }
+
+        isRunning = false;
+        isParsing = false;
 
         reportGui.setVisible(false);
     }
@@ -200,17 +210,15 @@ public class GameState extends State {
     }
 
     private void back() {
-        if (isRunning || isParsing) {
-            stop();
-        }
+        stop();
 
-        levelManager.getCurrentLevel().setScript(scriptGUI.getScript());
+        currentLevel.setScript(scriptGUI.getScript());
 
-        manager.switchState(MainMenu.class);
+        timeline.swap();
     }
 
     @Override
     public void hide() {
-        levelManager.save();
+        currentLevel.clear();
     }
 }

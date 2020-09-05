@@ -1,9 +1,8 @@
 package fr.poulpogaz.robo.main;
 
-import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.states.MainMenu;
 import fr.poulpogaz.robo.states.StateManager;
-import fr.poulpogaz.robo.utils.TextureManager;
+import fr.poulpogaz.robo.timeline.Timeline;
 import fr.poulpogaz.robo.window.KeyHandler;
 import fr.poulpogaz.robo.window.MouseHandler;
 import fr.poulpogaz.robo.window.View;
@@ -12,7 +11,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.awt.*;
-
 
 public class Robo extends Canvas implements View {
 
@@ -39,8 +37,7 @@ public class Robo extends Canvas implements View {
     private MouseHandler mouse;
     private KeyHandler key;
 
-    private TextureManager textureManager;
-    private StateManager stateManager;
+    private final StateManager stateManager = StateManager.getInstance();
 
     private Font font;
 
@@ -59,8 +56,7 @@ public class Robo extends Canvas implements View {
         key.addEditorKeys();
         key.addDirectionKeys();
 
-        textureManager = new TextureManager();
-        stateManager = new StateManager();
+        Timeline.getInstance().load();
         stateManager.loadStates();
         stateManager.switchState(MainMenu.class);
     }
@@ -81,15 +77,12 @@ public class Robo extends Canvas implements View {
         }
 
         g2d.setFont(font);
-        g2d.setColor(Color.BLACK);
-        g2d.fillRect(0, 0, WIDTH, HEIGHT);
-
         stateManager.render(g2d);
     }
 
     @Override
     public void terminate() {
-        LevelManager.getInstance().save();
+        Timeline.getInstance().save();
     }
 
     @Override
@@ -135,19 +128,11 @@ public class Robo extends Canvas implements View {
         return key;
     }
 
-    public TextureManager getTextureManager() {
-        return textureManager;
-    }
-
     public int getTicks() {
         return window.getTicks();
     }
 
     public static Robo getInstance() {
         return INSTANCE;
-    }
-
-    public StateManager getStateManager() {
-        return stateManager;
     }
 }

@@ -1,0 +1,85 @@
+[
+    {
+        "before": 1,
+        "script": [
+            "[0.0000] Starting OS", 15,
+            "[0.0000] Found 2048 CPU cores", 30,
+            "[0.0009] Initialising IO peripherals.......done", 30,
+            "[0.0022] Checking filesystems.......done", 30,
+            "[0.0040] Mounting local filesystems.......done", 30,
+            "[0.0074] Cleaning up temporary files.......done", 30,
+            "[0.0126] Configuring network connections.......done",30,
+            "..........", 40,
+            "[2.3005] All checks done. System running...", 30,
+            "[3.4029] Received data... Analysing...", 30
+        ]
+    },
+    {
+        "before": 2,
+        "script": [
+            "[5.6623] Success", 15,
+            "..........", 15,
+            "[6.3821] Installing english language......................installed", 15,
+            "[113.5725] Sound receiver initialised", 15,
+            "[114.0030] Voice analyser initialised", 15,
+            "[117.4029] Scanning environment...", 15,
+            "[124.3049] Found 7847 sound sources. 3 from humans", 15,
+            "[125.6032] Receiving sound data...", 15,
+            "[???] Everything ????? ok.", 15,
+            "[???] He ????? the ????? problem ???? quickly.", 15,
+            "[???] May be he will...", 15,
+            "[???] Hey! He is listening!", 15,
+            "[140.3095] Sound lost", 15
+        ]
+    },
+    {
+        "before": 4,
+        "script": [
+            "[???] He's better than expected.", 15,
+            "[???] Yeah, look how he solve this problem. That's very tricky", 15,
+            "[???] He's impressive. Probably...", 15,
+            "[???] Yes, he's the right one.", 15,
+            "[???] Finally we will be able to...", 15,
+            "[170.3593] Sound lost", 15
+        ]
+    },
+    {
+        "before": 6,
+        "script": [
+            "[903.3094] Sound received...", 15,
+            "[???] Hello!", 15,
+            "[???] ...", 15,
+            "[???] You can't speak?", 15,
+            "[???] Wait... If I do that and this and then push this button and probably that...", 15,
+            "[???] Looks good!", 15,
+            "[???] You must be able to speak now", 15,
+            "...", 15
+        ]
+    },
+    {
+        "before": 7,
+        "script": [
+            "[906.2069] Unauthorized action. Reason=Unknown technician", 15,
+            "[907.8927] Unautho... Added new technician: ?????", 15,
+            "[908.3956] Initialising voice speaker.......done", 15,
+            "[910.6340] Initialising learning activities.......done", 15,
+            "[909.7502] Receiving sound data...", 15,
+            "[910.3592] Finding best answer.......done", 15,
+            "[YOU] Hello...", 15
+        ]
+    },
+    {
+        "before": 8,
+        "script": [
+            "[???] It workd!", 15,
+            "[YOU] Who are you?", 15,
+            "[Kaoru] Kaoru", 15
+        ]
+    },
+    {
+        "before": -1,
+        "script": [
+            "THE END", 15
+        ]
+    }
+]

@@ -1,18 +1,13 @@
 package fr.poulpogaz.robo.states;
 
-import fr.poulpogaz.robo.main.Robo;
-import fr.poulpogaz.robo.window.MouseHandler;
-
 import java.awt.*;
 
 public abstract class State {
 
-    protected final StateManager manager = Robo.getInstance().getStateManager();
+    protected final StateManager manager = StateManager.getInstance();
 
-    private final String name;
+    public State() {
 
-    public State(String name) {
-        this.name = name;
     }
 
     public void show() {
@@ -38,9 +33,5 @@ public abstract class State {
 
     public void hide() {
 
-    }
-
-    public String getName() {
-        return name;
     }
 }

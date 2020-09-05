@@ -1,7 +1,7 @@
 package fr.poulpogaz.robo.map.tiles;
 
-import fr.poulpogaz.robo.utils.ResourceLocation;
 import fr.poulpogaz.robo.map.Tile;
+import fr.poulpogaz.robo.utils.ResourceLocation;
 
 public class VoidTile extends Tile {
 

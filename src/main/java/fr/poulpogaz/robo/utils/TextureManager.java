@@ -19,7 +19,9 @@ public final class TextureManager {
     private final HashMap<ResourceLocation, BufferedImage> IMAGES;
     private final HashMap<ResourceLocation, BufferedImage> SPRITES;
 
-    public TextureManager() {
+    private static final TextureManager INSTANCE = new TextureManager();
+
+    private TextureManager() {
         IMAGES = new HashMap<>();
         SPRITES = new HashMap<>();
     }
@@ -46,7 +48,9 @@ public final class TextureManager {
         }
     }
 
-
+    public void loadTexture(ResourceLocation resource) {
+        getTexture(resource);
+    }
 
     private BufferedImage loadTileTexture(ResourceLocation resource) {
         try {
@@ -63,8 +67,7 @@ public final class TextureManager {
 
             return image;
         } catch (IOException | JsonException e) {
-            LOGGER.warn("Failed to load texture at {}", resource);
-            LOGGER.warn(e);
+            LOGGER.warn("Failed to load texture at {}", resource, e);
 
             return null;
         }
@@ -85,14 +88,19 @@ public final class TextureManager {
             int x = reader.nextInt();
             int y = reader.nextInt();
 
-            BufferedImage subImage = image.getSubimage(x * Robo.TILE_SIZE, y * Robo.TILE_SIZE, Robo.TILE_SIZE, Robo.TILE_SIZE);
+            if (reader.hasNextInt()) {
+                int w = reader.nextInt();
+                int h = reader.nextInt();
+
+                image = image.getSubimage(x, y, w, h);
+            } else {
+                image = image.getSubimage(x * Robo.TILE_SIZE, y * Robo.TILE_SIZE, Robo.TILE_SIZE, Robo.TILE_SIZE);
+            }
 
             reader.endArray();
-
-            return subImage;
-        } else {
-            return image;
         }
+
+        return image;
     }
 
     private BufferedImage readImage(ResourceLocation resource) {
@@ -110,10 +118,13 @@ public final class TextureManager {
 
             return image;
         } catch (IOException e) {
-            LOGGER.warn("Failed to load texture at {}", resource);
-            LOGGER.warn(e);
+            LOGGER.warn("Failed to load texture at {}", resource, e);
 
             return null;
         }
+    }
+
+    public static TextureManager getInstance() {
+        return INSTANCE;
     }
 }

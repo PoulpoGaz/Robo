@@ -3,9 +3,8 @@ package fr.poulpogaz.robo.states;
 import fr.poulpogaz.robo.gui.FontColor;
 import fr.poulpogaz.robo.gui.GUIBox;
 import fr.poulpogaz.robo.gui.StringButton;
-import fr.poulpogaz.robo.level.LevelManager;
 import fr.poulpogaz.robo.main.Robo;
-import fr.poulpogaz.robo.utils.BackgroundThread;
+import fr.poulpogaz.robo.timeline.Timeline;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 import fr.poulpogaz.robo.utils.TextureManager;
 import fr.poulpogaz.robo.window.KeyHandler;
@@ -16,8 +15,8 @@ import java.awt.image.BufferedImage;
 
 public class MainMenu extends State {
 
-    private static final TextureManager textureManager = Robo.getInstance().getTextureManager();
-    private static final LevelManager levelManager = LevelManager.getInstance();
+    private static final TextureManager textureManager = TextureManager.getInstance();
+    private static final Timeline timeline = Timeline.getInstance();
     private static final ResourceLocation BACKGROUND = new ResourceLocation("main_menu", ResourceLocation.TEXTURE);
 
     private static final KeyHandler key = Robo.getInstance().getKeyHandler();
@@ -32,18 +31,17 @@ public class MainMenu extends State {
     private Boolean hasSave;
 
     public MainMenu() {
-        super("MainMenu");
-
         warning = new GUIBox();
         warning.setTitle("** WARNING **");
         warning.setText("Are you sure you want to\ndelete you old game?");
         warning.addButton(new StringButton("Yes", () -> {
-            BackgroundThread.submit(levelManager::deleteSave);
             warning.setVisible(false);
-            switchToGame(false);
+            switchToGame(true);
         }));
 
         warning.addButton(new StringButton("No", () -> warning.setVisible(false)));
+
+        textureManager.loadTexture(BACKGROUND);
     }
 
     @Override
@@ -67,7 +65,7 @@ public class MainMenu extends State {
         }
 
         if (hasSave == null) {
-            hasSave = levelManager.hasSave();
+            hasSave = timeline.hasSave();
         }
 
         drawMenu(g2d);
@@ -104,7 +102,7 @@ public class MainMenu extends State {
     @Override
     public void update(float delta) {
         if (hasSave == null) {
-            hasSave = levelManager.hasSave();
+            hasSave = timeline.hasSave();
         }
 
         if (!warning.isVisible()) {
@@ -113,13 +111,13 @@ public class MainMenu extends State {
             if (key.isKeyReleased(KeyEvent.VK_ENTER)) {
                 switch (index) {
                     case 0 -> {
-                        if (levelManager.hasSave()) {
+                        if (timeline.hasSave()) {
                             warning.setVisible(true);
                         } else {
-                            switchToGame(false);
+                            switchToGame(true);
                         }
                     }
-                    case 1 -> switchToGame(true);
+                    case 1 -> switchToGame(false);
                     case 2 -> manager.exit();
                 }
             }
@@ -128,9 +126,14 @@ public class MainMenu extends State {
         }
     }
 
-    private void switchToGame(boolean read) {
-        LevelManager.getInstance().loadLevels(read);
-        manager.switchState(GameState.class);
+    private void switchToGame(boolean newGame) {
+        if (newGame) {
+            timeline.newGame();
+        } else {
+            timeline.loadGame();
+        }
+
+        manager.switchState(TimelineState.class);
     }
 
     private void moveCursor() {

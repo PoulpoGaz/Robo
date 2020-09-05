@@ -31,4 +31,8 @@ public class Tiles {
 
         return REGISTRY.get(resourceLocation);
     }
+
+    public static Tile[] getTiles() {
+        return REGISTRY.values().toArray(new Tile[0]);
+    }
 }

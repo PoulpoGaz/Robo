@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="add z warning in the main menu">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/StringButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/TexturedButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/BackgroundThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/StringUtils.java" afterDir="false" />
+    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="add story and timeline object (object that control player advancement)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/EndState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StoryState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/TimelineState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/StoryLog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprite/timeline_level.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/sprite/timeline_story.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/story/story.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/timeline.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Robo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Robo.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/Button.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/GuiElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/GuiElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/InfoGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/GUIBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/ReportGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/ReportGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/StringButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/StringButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/TexturedGuiElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/gui/TexturedGuiElement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Robo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Robo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Tiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Tiles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/CrateTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/CrateTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/DestinationTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/DestinationTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/VoidTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/VoidTile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/WallTile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/tiles/WallTile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StateManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/StateManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/BackgroundThread.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ImageUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ImageUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ResourceLocation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/ResourceLocation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/TextureManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/utils/TextureManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +44,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -198,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598956201402</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add z warning in the main menu">
+      <created>1598979587294</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1598979587294</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -214,69 +239,70 @@
     <MESSAGE value="renaming project to Robo" />
     <MESSAGE value="main menu and save" />
     <MESSAGE value="add z warning in the main menu" />
-    <option name="LAST_COMMIT_MESSAGE" value="add z warning in the main menu" />
+    <MESSAGE value="add story and timeline object (object that control player advancement)" />
+    <option name="LAST_COMMIT_MESSAGE" value="add story and timeline object (object that control player advancement)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598875859619">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1598875859619" />
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1598957351408">
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599234278344">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1598957351408" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1599234278344" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1600.860@0.0.1600.860" timestamp="1598687440241" />
-    <state x="579" y="298" width="443" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1598947280666">
+    <state x="579" y="298" width="443" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1599062845679">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="579" y="298" width="443" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1598947280666" />
+    <state x="579" y="298" width="443" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1599062845679" />
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1598956613690">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598956613690" />
-    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1598979563919">
+    <state x="496" y="0" key="CommitChangelistDialog2" timestamp="1599300727119">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1598979563919" />
+    <state x="496" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599300727119" />
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1598948351194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1598948351194" />
-    <state width="1556" height="176" key="GridCell.Tab.0.bottom" timestamp="1598979519514">
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom" timestamp="1599300727401">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="176" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598979519514" />
-    <state width="1556" height="176" key="GridCell.Tab.0.center" timestamp="1598979519514">
+    <state width="1556" height="226" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599300727401" />
+    <state width="1556" height="226" key="GridCell.Tab.0.center" timestamp="1599300727400">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="176" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1598979519514" />
-    <state width="1556" height="176" key="GridCell.Tab.0.left" timestamp="1598979519514">
+    <state width="1556" height="226" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599300727400" />
+    <state width="1556" height="226" key="GridCell.Tab.0.left" timestamp="1599300727400">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="176" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1598979519514" />
-    <state width="1556" height="176" key="GridCell.Tab.0.right" timestamp="1598979519514">
+    <state width="1556" height="226" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599300727400" />
+    <state width="1556" height="226" key="GridCell.Tab.0.right" timestamp="1599300727401">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="176" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1598979519514" />
-    <state width="1556" height="269" key="GridCell.Tab.1.bottom" timestamp="1598950564688">
+    <state width="1556" height="226" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599300727401" />
+    <state width="1556" height="268" key="GridCell.Tab.1.bottom" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="269" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1598950564688" />
-    <state width="1556" height="269" key="GridCell.Tab.1.center" timestamp="1598950564688">
+    <state width="1556" height="268" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599058684477" />
+    <state width="1556" height="268" key="GridCell.Tab.1.center" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="269" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1598950564688" />
-    <state width="1556" height="269" key="GridCell.Tab.1.left" timestamp="1598950564688">
+    <state width="1556" height="268" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1599058684477" />
+    <state width="1556" height="268" key="GridCell.Tab.1.left" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="269" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1598950564688" />
-    <state width="1556" height="269" key="GridCell.Tab.1.right" timestamp="1598950564688">
+    <state width="1556" height="268" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1599058684477" />
+    <state width="1556" height="268" key="GridCell.Tab.1.right" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="269" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1598950564688" />
+    <state width="1556" height="268" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1599058684477" />
     <state x="280" y="3" key="SettingsEditor" timestamp="1598950416195">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -285,10 +311,10 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="550" y="242" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1600.860@0.0.1600.860" timestamp="1598711898579" />
-    <state x="456" y="190" key="run.anything.popup" timestamp="1598978564228">
+    <state x="456" y="190" key="run.anything.popup" timestamp="1599052764144">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="190" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1598978564228" />
+    <state x="456" y="190" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1599052764144" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1598947850233">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

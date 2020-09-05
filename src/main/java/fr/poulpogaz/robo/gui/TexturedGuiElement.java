@@ -3,7 +3,6 @@ package fr.poulpogaz.robo.gui;
 import fr.poulpogaz.json.IJsonReader;
 import fr.poulpogaz.json.JsonException;
 import fr.poulpogaz.json.JsonReader;
-import fr.poulpogaz.robo.main.Robo;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 import fr.poulpogaz.robo.utils.TextureManager;
 import org.apache.logging.log4j.LogManager;
@@ -16,7 +15,7 @@ import java.io.IOException;
 public abstract class TexturedGuiElement extends GuiElement {
 
     private static final Logger LOGGER = LogManager.getLogger(GuiElement.class);
-    private static final TextureManager textureManager = Robo.getInstance().getTextureManager();
+    private static final TextureManager textureManager = TextureManager.getInstance();
 
     private ResourceLocation resourceLocation;
     protected ResourceLocation noneLocation;
