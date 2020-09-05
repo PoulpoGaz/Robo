@@ -1,9 +1,8 @@
 package fr.poulpogaz.robo.map;
 
-import fr.poulpogaz.robo.utils.ISprite;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 
-public class Tile implements ISprite {
+public class Tile {
 
     private ResourceLocation resourceLocation;
 
@@ -27,7 +26,6 @@ public class Tile implements ISprite {
         return false;
     }
 
-    @Override
     public ResourceLocation getResourceLocation() {
         return resourceLocation;
     }

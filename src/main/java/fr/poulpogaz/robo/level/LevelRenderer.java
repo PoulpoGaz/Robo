@@ -5,7 +5,7 @@ import fr.poulpogaz.robo.map.Tile;
 import fr.poulpogaz.robo.map.Tiles;
 import fr.poulpogaz.robo.robot.Pos;
 import fr.poulpogaz.robo.robot.Robot;
-import fr.poulpogaz.robo.utils.ISprite;
+import fr.poulpogaz.robo.utils.ResourceLocation;
 import fr.poulpogaz.robo.utils.TextureManager;
 
 import java.awt.*;
@@ -28,7 +28,7 @@ public class LevelRenderer {
         }
     }
 
-    public void render(Graphics2D g2d, Level level, int width, int height) {
+    public void render(Graphics2D g2d, Level level, int width, int height, boolean levelFailed, boolean levelFinished, boolean robotRunning) {
         Map map = level.getMap();
         int lvlWidth = level.getWidth();
         int lvlHeight = level.getHeight();
@@ -40,18 +40,18 @@ public class LevelRenderer {
             for (int x = 0; x < lvlWidth; x++) {
                 Tile tile = map.get(x, y);
 
-                renderSprite(g2d, tile, offsetX + x * TILE_SIZE, offsetY + y * TILE_SIZE);
+                renderSprite(g2d, tile.getResourceLocation(), offsetX + x * TILE_SIZE, offsetY + y * TILE_SIZE);
             }
         }
 
         Robot robot = level.getRobot();
         Pos pos = robot.getPos();
 
-        renderSprite(g2d, robot, offsetX + pos.getX() * TILE_SIZE, offsetY + pos.getY() * TILE_SIZE);
+        renderSprite(g2d, robot.getResourceLocation(levelFailed, levelFinished, robotRunning), offsetX + pos.getX() * TILE_SIZE, offsetY + pos.getY() * TILE_SIZE);
     }
 
-    public void renderSprite(Graphics2D g2d, ISprite sprite, int x, int y) {
-        BufferedImage image = textureManager.getTexture(sprite.getResourceLocation());
+    public void renderSprite(Graphics2D g2d, ResourceLocation resourceLocation, int x, int y) {
+        BufferedImage image = textureManager.getTexture(resourceLocation);
 
         g2d.drawImage(image, x, y, null);
     }

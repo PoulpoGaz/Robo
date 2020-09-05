@@ -115,7 +115,7 @@ public class GameState extends State {
         g2d.setColor(Color.BLACK);
         g2d.fillRect(0, 0, LEVEL_RENDER_WIDTH, HEIGHT);
 
-        levelRenderer.render(g2d, currentLevel, LEVEL_RENDER_WIDTH, HEIGHT);
+        levelRenderer.render(g2d, currentLevel, LEVEL_RENDER_WIDTH, HEIGHT, levelFailed.isVisible(), levelFinished.isVisible(), isRunning); // :/
         playButton.render(g2d);
         stopButton.render(g2d);
         showInfo.render(g2d);
