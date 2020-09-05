@@ -10,18 +10,26 @@ import fr.poulpogaz.robo.map.Tiles;
 import fr.poulpogaz.robo.robot.Robot;
 import fr.poulpogaz.robo.robot.RobotBuilder;
 import fr.poulpogaz.robo.utils.ResourceLocation;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class LevelData {
 
-    protected MapBuilder mapBuilder;
-    protected RobotBuilder robotBuilder;
+    private static final Logger LOGGER = LogManager.getLogger(LevelData.class);
 
-    protected String description;
+    private final int index;
+    private MapBuilder mapBuilder;
+    private RobotBuilder robotBuilder;
+
+    private String description;
 
     public LevelData(int levelIndex) {
+        this.index = levelIndex;
         mapBuilder = new MapBuilder();
         robotBuilder = new RobotBuilder();
 
@@ -69,10 +77,14 @@ public class LevelData {
             mapBuilder.setTiles(readTiles(reader));
             reader.endArray();
 
+            reader.skipKey().beginArray();
+            mapBuilder.setDataCubes(readDataCubes(reader));
+            reader.endArray();
+
             reader.endObject();
             reader.close();
         } catch (IOException | JsonException e) {
-            e.printStackTrace();
+            LOGGER.warn("Failed to read level {}", index, e);
         }
     }
 
@@ -110,5 +122,30 @@ public class LevelData {
         }
 
         return tiles;
+    }
+
+    private DataCube[][] readDataCubes(IJsonReader reader) throws IOException, JsonException {
+        DataCube[][] dataCubes = new DataCube[getHeight()][getWidth()];
+
+        while (!reader.isArrayEnd()) {
+
+            reader.beginObject();
+
+            int x = reader.skipKey().nextInt();
+            int y = reader.skipKey().nextInt();
+
+            reader.skipKey();
+
+            if (reader.hasNextInt()) {
+                dataCubes[y][x] = DataCube.createDataCube(reader.nextInt());
+            } else {
+                dataCubes[y][x] = DataCube.createRandomCube();
+                reader.skipValue();
+            }
+
+            reader.endObject();
+        }
+
+        return dataCubes;
     }
 }

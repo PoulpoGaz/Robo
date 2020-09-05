@@ -15,7 +15,7 @@
         ]
     },
     {
-        "before": 3,
+        "before": 5,
         "script": [
             "[5.6623] Success", 15,
             "..........", 15,
@@ -33,7 +33,7 @@
         ]
     },
     {
-        "before": 4,
+        "before": 6,
         "script": [
             "[???] He's better than expected.", 15,
             "[???] Yeah, look how he solve this problem. That's very tricky", 15,
@@ -71,7 +71,7 @@
     {
         "before": 8,
         "script": [
-            "[???] It workd!", 15,
+            "[???] It works!", 15,
             "[YOU] Who are you?", 15,
             "[Kaoru] Kaoru", 15
         ]

@@ -18,6 +18,14 @@ public class Report {
         this.time = -1;
     }
 
+    public Report(ExecuteReport report) {
+        success = false;
+        error = report.getError();
+        line = report.getLine();
+        from = report.getOperation().getClass();
+        time = -1;
+    }
+
     public Report(long time) {
         this.success = true;
         this.error = null;

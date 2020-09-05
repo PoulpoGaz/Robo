@@ -49,11 +49,13 @@ public final class ScriptExecutor {
             Operation operation;
 
             switch (parts[0]) {
-                case "label" -> {
+                case "label", "" -> {
                     continue;
                 }
                 case "goto" -> operation = new GoTo(i);
                 case "move" -> operation = new Move(i);
+                case "pick" -> operation = new Pick(i);
+                case "drop" -> operation = new Drop(i);
                 default -> {
                     return unknownOperation(parts[0], i);
                 }
@@ -85,9 +87,9 @@ public final class ScriptExecutor {
 
             if (line.isEmpty() || line.equals("\n")) {
                 operations[i] = new EmptyOperation(i);
-            } else {
-                lines[i] = line.replace("\n", "");
             }
+
+            lines[i] = line.replace("\n", "");
         }
     }
 
@@ -130,13 +132,24 @@ public final class ScriptExecutor {
 
         LOGGER.info("Executing line {}", currentLine);
 
-        Operation operation = operations[currentLine];
+        Operation operation;
+        OperationReport report;
 
-        int oldLine = currentLine;
+         while ((operation = operations[currentLine]) instanceof EmptyOperation) {
+             currentLine = operation.execute(map, robot).getNextLine();
+         }
 
-        currentLine = operation.execute(map, robot);
+         operation = operations[currentLine];
+         report = operation.execute(map, robot);
 
-        return new ExecuteReport(oldLine, operation, false);
+        if (report.getError() != null) {
+            return new ExecuteReport(report.getError(), operation);
+        } else {
+            int oldLine = currentLine;
+            currentLine = report.getNextLine();
+
+            return new ExecuteReport(oldLine, operation, false);
+        }
     }
 
     public int getCurrentLine() {

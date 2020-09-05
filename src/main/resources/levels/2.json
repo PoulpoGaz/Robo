@@ -14,5 +14,6 @@
         "tile:wall", "tile:void",  "tile:void",  "tile:void",  "tile:floor",  "tile:void", "tile:wall",
         "tile:wall", "tile:void",  "tile:void",  "tile:void",  "tile:floor",  "tile:destination", "tile:wall",
         "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall"
-    ]
+    ],
+    "data_cubes": []
 }

@@ -12,12 +12,14 @@ public abstract class Level implements Node {
     private final int levelIndex;
     private LevelData data;
     private String script;
+    private final List<Class<? extends Operation>> operations;
 
     protected Map map;
     protected Robot robot;
 
-    public Level(int index) {
+    public Level(int index, List<Class<? extends Operation>> operations){
         this.levelIndex = index;
+        this.operations = operations;
 
         data = new LevelData(index);
     }
@@ -62,7 +64,9 @@ public abstract class Level implements Node {
         return script;
     }
 
-    public abstract List<Class<? extends Operation>> getAvailableOperations();
+    public List<Class<? extends Operation>> getAvailableOperations() {
+        return operations;
+    }
 
     public int getIndex() {
         return levelIndex;

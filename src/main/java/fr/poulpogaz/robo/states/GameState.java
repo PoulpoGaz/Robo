@@ -182,19 +182,27 @@ public class GameState extends State {
     private void run() {
         if (Robo.getInstance().getTicks() % 30 == 0) {
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
-            CheckReport checkReport = currentLevel.check();
 
-            if (!report.isEnd()) {
-                scriptGUI.highlightLine(report.getLine());
-            }
+            if (report.getError() != null) {
+                // ERROR :/
 
-            if (checkReport != CheckReport.OK || report.isEnd()) {
-                isRunning = false;
+                stop();
+                reportGui.setReport(new Report(report));
+            } else {
+                CheckReport checkReport = currentLevel.check();
 
-                if (checkReport == CheckReport.LEVEL_FINISHED) {
-                    levelFinished.setVisible(true);
-                } else if (checkReport == CheckReport.LEVEL_FAILED || report.isEnd()) {
-                    levelFailed.setVisible(true);
+                if (!report.isEnd()) {
+                    scriptGUI.highlightLine(report.getLine());
+                }
+
+                if (checkReport != CheckReport.OK || report.isEnd()) {
+                    isRunning = false;
+
+                    if (checkReport == CheckReport.LEVEL_FINISHED) {
+                        levelFinished.setVisible(true);
+                    } else if (checkReport == CheckReport.LEVEL_FAILED || report.isEnd()) {
+                        levelFailed.setVisible(true);
+                    }
                 }
             }
         }

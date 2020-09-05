@@ -2,9 +2,11 @@
     "width": 3,
     "height": 7,
     "description": [
-        "Move the robot to the destination tile",
+        "Pick and drop the data cube on the",
+        "destination tile",
         "New operation:",
-        " -move (left/down/right/up)"
+        " -pick (here/left/down/right/up)",
+        " -drop (here/left/down/right/up)"
     ],
     "robot": [1, 1],
     "data": [
@@ -16,5 +18,11 @@
         "tile:wall", "tile:destination", "tile:wall",
         "tile:wall", "tile:wall",  "tile:wall"
     ],
-    "data_cubes": []
+    "data_cubes": [
+        {
+            "x": 1,
+            "y": 2,
+            "value": "random"
+        }
+    ]
 }

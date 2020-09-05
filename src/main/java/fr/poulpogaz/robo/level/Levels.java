@@ -1,8 +1,6 @@
 package fr.poulpogaz.robo.level;
 
-import fr.poulpogaz.robo.robot.GoTo;
-import fr.poulpogaz.robo.robot.Label;
-import fr.poulpogaz.robo.robot.Move;
+import fr.poulpogaz.robo.robot.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +23,8 @@ public class Levels {
         levels.add(new DestinationLevel(1, List.of(Move.class)));
         levels.add(new DestinationLevel(2, List.of(Move.class)));
         levels.add(new DestinationLevel(3, List.of(Move.class, GoTo.class, Label.class)));
+        levels.add(new MoveDataCubeToDestinationLevel(4, List.of(Move.class, GoTo.class, Label.class, Pick.class, Drop.class)));
+        levels.add(new MoveDataCubeToDestinationLevel(5, List.of(Move.class, GoTo.class, Label.class, Pick.class, Drop.class)));
 
         return levels;
     }

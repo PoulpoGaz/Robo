@@ -32,7 +32,7 @@ public class Move extends Operation {
     }
 
     @Override
-    public int execute(Map map, Robot robot) {
+    public OperationReport execute(Map map, Robot robot) {
         Pos pos = new Pos(robot.getPos());
         switch (direction) {
             case "up" -> pos.y--;
@@ -45,6 +45,6 @@ public class Move extends Operation {
             robot.setPos(pos);
         }
 
-        return lineNumber + 1;
+        return new OperationReport(lineNumber + 1);
     }
 }

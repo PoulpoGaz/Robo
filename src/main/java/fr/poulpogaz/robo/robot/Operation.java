@@ -14,7 +14,7 @@ public abstract class Operation {
 
     public abstract Report parse(Operation[] operations, String[] script, String[] self);
 
-    public abstract int execute(Map map, Robot robot);
+    public abstract OperationReport execute(Map map, Robot robot);
 
     public String getName() {
         return name;

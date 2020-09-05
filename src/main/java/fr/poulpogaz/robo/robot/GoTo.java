@@ -34,7 +34,7 @@ public class GoTo extends Operation {
     }
 
     @Override
-    public int execute(Map map, Robot robot) {
-        return label.getLineNumber();
+    public OperationReport execute(Map map, Robot robot) {
+        return new OperationReport(label.getLineNumber());
     }
 }

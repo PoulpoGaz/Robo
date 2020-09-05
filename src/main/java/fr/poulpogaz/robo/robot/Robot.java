@@ -1,5 +1,6 @@
 package fr.poulpogaz.robo.robot;
 
+import fr.poulpogaz.robo.level.DataCube;
 import fr.poulpogaz.robo.utils.ResourceLocation;
 
 public class Robot {
@@ -10,6 +11,7 @@ public class Robot {
     private static final ResourceLocation ROBOT_NOT_RUNNING = new ResourceLocation("robot_not_running", ResourceLocation.ROBOT);
 
     private Pos pos;
+    private DataCube dataCube;
 
     public Robot(int x, int y) {
         pos = new Pos(x, y);
@@ -21,6 +23,14 @@ public class Robot {
 
     public void setPos(Pos pos) {
         this.pos = pos;
+    }
+
+    public void setDataCube(DataCube cube) {
+        dataCube = cube;
+    }
+
+    public DataCube getDataCube() {
+        return dataCube;
     }
 
     public ResourceLocation getResourceLocation(boolean levelFailed, boolean levelFinished, boolean running) {

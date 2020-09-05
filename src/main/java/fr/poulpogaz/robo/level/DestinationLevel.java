@@ -8,11 +8,8 @@ import java.util.List;
 
 public class DestinationLevel extends Level {
 
-    private final List<Class<? extends Operation>> operations;
-
     public DestinationLevel(int index, List<Class<? extends Operation>> operations) {
-        super(index);
-        this.operations = operations;
+        super(index, operations);
     }
 
     @Override
@@ -28,10 +25,5 @@ public class DestinationLevel extends Level {
         } else {
             return CheckReport.OK;
         }
-    }
-
-    @Override
-    public List<Class<? extends Operation>> getAvailableOperations() {
-        return operations;
     }
 }

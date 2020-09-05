@@ -14,7 +14,7 @@ public class EmptyOperation extends Operation {
     }
 
     @Override
-    public int execute(Map map, Robot robot) {
-        return lineNumber + 1;
+    public OperationReport execute(Map map, Robot robot) {
+        return new OperationReport(lineNumber + 1);
     }
 }

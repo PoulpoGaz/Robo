@@ -4,6 +4,9 @@ import fr.poulpogaz.robo.utils.Cache;
 import fr.poulpogaz.robo.window.View;
 import fr.poulpogaz.robo.window.Window;
 
+import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
+
 public class Main {
 
     public static void main(String[] args) {
