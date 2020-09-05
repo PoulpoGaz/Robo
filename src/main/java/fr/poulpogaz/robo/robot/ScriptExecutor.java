@@ -56,6 +56,8 @@ public final class ScriptExecutor {
                 case "move" -> operation = new Move(i);
                 case "pick" -> operation = new Pick(i);
                 case "drop" -> operation = new Drop(i);
+                case "ifzero" -> operation = new IfZero(i);
+                case "ifneg" -> operation = new IfNeg(i);
                 default -> {
                     return unknownOperation(parts[0], i);
                 }

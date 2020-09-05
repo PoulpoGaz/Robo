@@ -91,7 +91,7 @@ public class Timeline {
 
         index = 0;
         currentNode = nodes.get(index);
-        unlockedNodes = 0;
+        unlockedNodes = nodes.size() - 1; // TODO: REMOVE THAT
 
         for (Node node : nodes) {
             if (node.getType() == Node.LEVEL_NODE) {

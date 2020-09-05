@@ -35,6 +35,9 @@ public class GameState extends State {
     private final GUIBox levelFinished;
     private final GUIBox levelFailed;
 
+    private final StringButton speedButton;
+    private int speed = 1;
+
     private final ReportGui reportGui;
     private Future<Report> scriptParser;
     private boolean isParsing = false;
@@ -87,6 +90,11 @@ public class GameState extends State {
         reportGui.setY(5);
         reportGui.setMaxWidth(200);
 
+        speedButton = new StringButton();
+        speedButton.setX(5);
+        speedButton.setY(20 + 2 *TILE_SIZE);
+        speedButton.setReleaseListener(this::increaseSpeed);
+
         levelRenderer.init();
     }
 
@@ -100,6 +108,9 @@ public class GameState extends State {
 
         infoGui.setText(currentLevel.getDescription());
         infoGui.setVisible(true);
+
+        speed = 1;
+        speedButton.setText("Speed x" + speed);
 
         scriptGUI.reset();
 
@@ -120,6 +131,7 @@ public class GameState extends State {
         stopButton.render(g2d);
         showInfo.render(g2d);
         backButton.render(g2d);
+        speedButton.render(g2d);
 
         scriptGUI.render(g2d);
 
@@ -145,6 +157,7 @@ public class GameState extends State {
             stopButton.update();
             showInfo.update();
             backButton.update();
+            speedButton.update();
         }
 
         if (isParsing) {
@@ -180,7 +193,7 @@ public class GameState extends State {
     }
 
     private void run() {
-        if (Robo.getInstance().getTicks() % 30 == 0) {
+        if (Robo.getInstance().getTicks() % (30 - speed) == 0) {
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
 
             if (report.getError() != null) {
@@ -247,6 +260,16 @@ public class GameState extends State {
         currentLevel.setScript(scriptGUI.getScript());
 
         timeline.swap();
+    }
+
+    private void increaseSpeed() {
+        speed += 6;
+
+        if (speed > 26) {
+            speed = 1;
+        }
+
+        speedButton.setText("Speed x" + speed);
     }
 
     @Override

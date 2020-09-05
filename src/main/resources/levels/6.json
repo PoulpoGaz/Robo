@@ -1,0 +1,25 @@
+{
+    "width": 4,
+    "height": 11,
+    "description": [
+        "Drop all data cube with value zero",
+        "in the void",
+        "New command:",
+        " -ifzero [label]"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall" ,"tile:wall"
+    ],
+    "data_cubes": []
+}

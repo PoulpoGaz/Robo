@@ -1,5 +1,7 @@
-package fr.poulpogaz.robo.level;
+package fr.poulpogaz.robo.level.levels;
 
+import fr.poulpogaz.robo.level.CheckReport;
+import fr.poulpogaz.robo.level.Level;
 import fr.poulpogaz.robo.map.Tile;
 import fr.poulpogaz.robo.robot.Operation;
 import fr.poulpogaz.robo.robot.Pos;

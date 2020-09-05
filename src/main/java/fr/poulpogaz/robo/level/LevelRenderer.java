@@ -37,6 +37,10 @@ public class LevelRenderer {
         int offsetX = (width - lvlWidth * TILE_SIZE) / 2;
         int offsetY = (height - lvlHeight * TILE_SIZE) /2;
 
+        Robot robot = level.getRobot();
+        Pos pos = robot.getPos();
+        boolean renderRobotWithTransparency = false;
+
         for (int y = 0; y < lvlHeight; y++) {
             for (int x = 0; x < lvlWidth; x++) {
                 Tile tile = map.get(x, y);
@@ -49,15 +53,22 @@ public class LevelRenderer {
                 DataCube cube = map.getDataCube(x, y);
 
                 if (cube != null) {
+                    if (pos.x == x && pos.y == y) {
+                        renderRobotWithTransparency = true;
+                    }
+
                     renderDataCube(g2d, cube, drawX, drawY);
                 }
             }
         }
 
-        Robot robot = level.getRobot();
-        Pos pos = robot.getPos();
+        Composite old = g2d.getComposite();
+        if (renderRobotWithTransparency) {
+            g2d.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3f));
+        }
 
         renderSprite(g2d, robot.getResourceLocation(levelFailed, levelFinished, robotRunning), offsetX + pos.getX() * TILE_SIZE, offsetY + pos.getY() * TILE_SIZE);
+        g2d.setComposite(old);
 
         if (robot.getDataCube() != null) {
             drawRobotDataCube(g2d, robot.getDataCube());
@@ -65,7 +76,7 @@ public class LevelRenderer {
     }
 
     private void drawRobotDataCube(Graphics2D g2d, DataCube dataCube) {
-        int y = TILE_SIZE * 4;
+        int y = TILE_SIZE * 5;
         int size = TILE_SIZE + 8;
 
         g2d.setColor(new Color(25, 25, 25));

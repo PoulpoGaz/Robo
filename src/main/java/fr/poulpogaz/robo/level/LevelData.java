@@ -30,10 +30,18 @@ public class LevelData {
 
     public LevelData(int levelIndex) {
         this.index = levelIndex;
-        mapBuilder = new MapBuilder();
-        robotBuilder = new RobotBuilder();
+        mapBuilder = createMapBuilder();
+        robotBuilder = createRobotBuilder();
 
         readData(ResourceLocation.createInputStreamStatic(Integer.toString(levelIndex), ResourceLocation.LEVEL));
+    }
+
+    protected MapBuilder createMapBuilder() {
+        return new MapBuilder();
+    }
+
+    protected RobotBuilder createRobotBuilder() {
+        return new RobotBuilder();
     }
 
     public Map buildMap() {

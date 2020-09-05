@@ -17,69 +17,69 @@
     {
         "before": 5,
         "script": [
-            "[5.6623] Success", 15,
-            "..........", 15,
-            "[6.3821] Installing english language......................installed", 15,
-            "[113.5725] Sound receiver initialised", 15,
-            "[114.0030] Voice analyser initialised", 15,
-            "[117.4029] Scanning environment...", 15,
-            "[124.3049] Found 7847 sound sources. 3 from humans", 15,
-            "[125.6032] Receiving sound data...", 15,
-            "[???] Everything ????? ok.", 15,
-            "[???] He ????? the ????? problem ???? quickly.", 15,
-            "[???] May be he will...", 15,
-            "[???] Hey! He is listening!", 15,
-            "[140.3095] Sound lost", 15
-        ]
-    },
-    {
-        "before": 6,
-        "script": [
-            "[???] He's better than expected.", 15,
-            "[???] Yeah, look how he solve this problem. That's very tricky", 15,
-            "[???] He's impressive. Probably...", 15,
-            "[???] Yes, he's the right one.", 15,
-            "[???] Finally we will be able to...", 15,
-            "[170.3593] Sound lost", 15
-        ]
-    },
-    {
-        "before": 6,
-        "script": [
-            "[903.3094] Sound received...", 15,
-            "[???] Hello!", 15,
-            "[???] ...", 15,
-            "[???] You can't speak?", 15,
-            "[???] Wait... If I do that and this and then push this button and probably that...", 15,
-            "[???] Looks good!", 15,
-            "[???] You must be able to speak now", 15,
-            "...", 15
+            "..........", 30,
+            "[6.3821] Installing english language......................installed", 30,
+            "[113.5725] Sound receiver initialised", 30,
+            "[114.0030] Voice analyser initialised", 30,
+            "[117.4029] Scanning environment...", 30,
+            "[124.3049] Found 7847 sound sources. 3 from humans", 30,
+            "[125.6032] Receiving sound data...", 30,
+            "[???] Everything ????? ok.", 30,
+            "[???] He ????? the ????? problem ???? quickly.", 30,
+            "[???] May be he will...", 30,
+            "[???] Hey! He is listening!", 30,
+            "[140.3095] <<Sound lost>>", 30
         ]
     },
     {
         "before": 7,
         "script": [
-            "[906.2069] Unauthorized action. Reason=Unknown technician", 15,
-            "[907.8927] Unautho... Added new technician: ?????", 15,
-            "[908.3956] Initialising voice speaker.......done", 15,
-            "[910.6340] Initialising learning activities.......done", 15,
-            "[909.7502] Receiving sound data...", 15,
-            "[910.3592] Finding best answer.......done", 15,
-            "[YOU] Hello...", 15
+            "[???] He's better than expected.", 30,
+            "[???] Yeah, look how he solve this problem. That's very tricky", 30,
+            "[???] He's impressive. Probably...", 30,
+            "[???] Yes, he's the right one.", 30,
+            "[???] Finally we will be able to...", 30,
+            "[170.3593] <<Sound lost>>", 30
         ]
     },
     {
-        "before": 8,
+        "before": 9,
         "script": [
-            "[???] It works!", 15,
-            "[YOU] Who are you?", 15,
-            "[Kaoru] Kaoru", 15
+            "[903.3094] Sound received...", 30,
+            "[???] Hello!", 30,
+            "[???] ...", 30,
+            "[???] You can't speak?", 30,
+            "[???] Wait... If I do that and this and then push this button and probably that...", 30,
+            "[???] Looks good!", 30,
+            "[???] You must be able to speak now", 30,
+            "...", 30
+        ]
+    },
+    {
+        "before": 10,
+        "script": [
+            "[906.2069] Unauthorized action. Reason=Unknown technician", 30,
+            "[907.8927] Unautho... Added new technician: ?????", 30,
+            "[908.3956] Initialising voice speaker.......done", 30,
+            "[910.6340] Initialising learning activities.......done", 30,
+            "[909.7502] Receiving sound data...", 30,
+            "[910.3592] Finding best answer.......done", 30,
+            "[YOU] Hello...", 30
+        ]
+    },
+    {
+        "before": 12,
+        "script": [
+            "[???] It works!", 30,
+            "[YOU] Who are you?", 30,
+            "[Kaoru] Kaoru", 30,
+            "TO BE CONTINUED...", 30
         ]
     },
     {
         "before": -1,
         "script": [
-            "THE END", 15
+            "TO BE CONTINUED...", 30
         ]
     }
 ]

@@ -16,12 +16,20 @@ public class MapBuilder {
     }
 
     public Map build() {
+        return new Map(copyTiles(), copyDataCubes(), width, height);
+    }
+
+    protected Tile[][] copyTiles() {
         Tile[][] copy = new Tile[height][width];
 
         for (int y = 0; y < height; y++) {
             copy[y] = Arrays.copyOf(tiles[y], width);
         }
 
+        return copy;
+    }
+
+    protected DataCube[][] copyDataCubes() {
         DataCube[][] dataCubesCopy = new DataCube[height][width];
 
         for (int y = 0; y < height; y++) {
@@ -32,7 +40,7 @@ public class MapBuilder {
             }
         }
 
-        return new Map(copy, dataCubesCopy, width, height);
+        return dataCubesCopy;
     }
 
     public Tile[][] getTiles() {

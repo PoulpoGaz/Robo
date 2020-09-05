@@ -2,36 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DataCube.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/MoveDataCubeToDestinationLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/OperationReport.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DataCubeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/MapBuilderWithDataCubeGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/levels/Level6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/GoToOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/IfNeg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/IfZero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/6.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Robo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Robo.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DestinationLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DestinationLevel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DestinationLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/levels/DestinationLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Level.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/LevelRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/MoveDataCubeToDestinationLevel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/levels/MoveDataCubeToDestinationLevel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Map.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/Map.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/MapBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/map/MapBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/EmptyOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/EmptyOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ExecuteReport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ExecuteReport.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/GoTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/GoTo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/If.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Label.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Loop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Pick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Operation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Report.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Robot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levels/1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levels/1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levels/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levels/2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/levels/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/levels/3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/sprite/datacube.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/sprite/data_cube.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/story/story.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story/story.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +92,7 @@
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="fr.poulpogaz.robo.main.Main" />
       <module name="Robo" />
-      <option name="VM_PARAMETERS" value="-Dsun.java2d.opengl=true" />
+      <option name="VM_PARAMETERS" value="-Dsun.java2d.opengl=true -XX:+ShowCodeDetailsInExceptionMessages" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="fr.poulpogaz.robo.main.*" />
@@ -276,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599308883253</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add data cubes and pick and drop operations&#10;add 2 levels">
+      <created>1599318252294</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1599318252294</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -296,17 +294,18 @@
     <MESSAGE value="add the beginning of the story and a timeline object (object that control player advancement. Also replace the old LevelManager)" />
     <MESSAGE value="add 2 basic levels, gui box and timeline (now center on the last unlocked node (level or story)) improvement" />
     <MESSAGE value="add robot &quot;emotions&quot; (happy, sad, normal, not running)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add robot &quot;emotions&quot; (happy, sad, normal, not running)" />
+    <MESSAGE value="add data cubes and pick and drop operations&#10;add 2 levels" />
+    <option name="LAST_COMMIT_MESSAGE" value="add data cubes and pick and drop operations&#10;add 2 levels" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599301416516">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599321774943">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1599301416516" />
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599311575277">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1599321774943" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599320992437">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1599311575277" />
+    <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1599320992437" />
     <state x="523" y="118" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1598687440241">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -323,30 +322,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598956613690" />
-    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1599308880769">
+    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1599318223338">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599308880769" />
+    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599318223338" />
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1598948351194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1598948351194" />
-    <state width="1556" height="234" key="GridCell.Tab.0.bottom" timestamp="1599318023796">
+    <state width="1556" height="233" key="GridCell.Tab.0.bottom" timestamp="1599324026232">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="234" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599318023796" />
-    <state width="1556" height="234" key="GridCell.Tab.0.center" timestamp="1599318023795">
+    <state width="1556" height="233" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599324026232" />
+    <state width="1556" height="233" key="GridCell.Tab.0.center" timestamp="1599324026231">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="234" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599318023795" />
-    <state width="1556" height="234" key="GridCell.Tab.0.left" timestamp="1599318023795">
+    <state width="1556" height="233" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599324026231" />
+    <state width="1556" height="233" key="GridCell.Tab.0.left" timestamp="1599324026231">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="234" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599318023795" />
-    <state width="1556" height="234" key="GridCell.Tab.0.right" timestamp="1599318023796">
+    <state width="1556" height="233" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599324026231" />
+    <state width="1556" height="233" key="GridCell.Tab.0.right" timestamp="1599324026232">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="234" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599318023796" />
+    <state width="1556" height="233" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599324026232" />
     <state width="1556" height="268" key="GridCell.Tab.1.bottom" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

@@ -21,7 +21,11 @@ public abstract class Level implements Node {
         this.levelIndex = index;
         this.operations = operations;
 
-        data = new LevelData(index);
+        data = createLevelData(index);
+    }
+
+    protected LevelData createLevelData(int index) {
+        return new LevelData(index);
     }
 
     public void init() {

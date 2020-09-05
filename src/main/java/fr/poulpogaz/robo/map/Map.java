@@ -3,6 +3,8 @@ package fr.poulpogaz.robo.map;
 import fr.poulpogaz.robo.level.DataCube;
 import fr.poulpogaz.robo.robot.Pos;
 
+import java.util.Arrays;
+
 public class Map {
 
     private final Tile[][] tiles;
