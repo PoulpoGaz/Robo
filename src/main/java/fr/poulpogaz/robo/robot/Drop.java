@@ -6,43 +6,15 @@ import fr.poulpogaz.robo.map.Tile;
 
 import java.util.Arrays;
 
-public class Drop extends Operation {
-
-    private static final String[] DIRECTIONS = new String[] {"up", "down", "left", "right", "here"};
-
-    private String direction;
+public class Drop extends DirectionalOperation {
 
     public Drop(int lineNumber) {
         super("drop", lineNumber);
     }
 
     @Override
-    public Report parse(Operation[] operations, String[] script, String[] self) {
-        if (self.length != 2) {
-            return new Report("The pick operation needs one argument (one of " + Arrays.toString(DIRECTIONS) + ")", lineNumber, Pick.class);
-        }
-
-        for (String direction : DIRECTIONS) {
-            if (direction.equals(self[1])) {
-                this.direction = self[1];
-
-                return Report.TRUE;
-            }
-        }
-
-        return new Report("Unknown arguments: " + self[1], lineNumber, Pick.class);
-    }
-
-    @Override
     public OperationReport execute(Map map, Robot robot) {
-        Pos dropPos = new Pos(robot.getPos());
-
-        switch (direction) {
-            case "up" -> dropPos.y--;
-            case "down" -> dropPos.y++;
-            case "left" -> dropPos.x--;
-            case "right" -> dropPos.x++;
-        }
+        Pos dropPos = getPos(robot);
 
         DataCube cube = robot.getDataCube();
 

@@ -193,7 +193,7 @@ public class GameState extends State {
     }
 
     private void run() {
-        if (Robo.getInstance().getTicks() % (30 - speed) == 0) {
+        if (Robo.getInstance().getTicks() % (31 - speed) == 0) {
             ExecuteReport report = ScriptThread.executeOneLine(currentLevel.getMap(), currentLevel.getRobot());
 
             if (report.getError() != null) {
@@ -263,9 +263,13 @@ public class GameState extends State {
     }
 
     private void increaseSpeed() {
-        speed += 6;
+        if (speed == 1) {
+            speed = 10;
+        } else {
+            speed += 10;
+        }
 
-        if (speed > 26) {
+        if (speed > 30) {
             speed = 1;
         }
 

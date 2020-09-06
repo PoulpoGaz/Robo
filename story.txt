@@ -1,0 +1,35 @@
+,
+    {
+        "before": 9,
+        "script": [
+            "[903.3094] Sound received...", 30,
+            "[???] Hello!", 30,
+            "[???] ...", 30,
+            "[???] You can't speak?", 30,
+            "[???] Wait... If I do that and this and then push this button and probably that...", 30,
+            "[???] Looks good!", 30,
+            "[???] You must be able to speak now", 30,
+            "...", 30
+        ]
+    },
+    {
+        "before": 10,
+        "script": [
+            "[906.2069] Unauthorized action. Reason=Unknown technician", 30,
+            "[907.8927] Unautho... Added new technician: ?????", 30,
+            "[908.3956] Initialising voice speaker.......done", 30,
+            "[910.6340] Initialising learning activities.......done", 30,
+            "[909.7502] Receiving sound data...", 30,
+            "[910.3592] Finding best answer.......done", 30,
+            "[YOU] Hello...", 30
+        ]
+    },
+    {
+        "before": 12,
+        "script": [
+            "[???] It works!", 30,
+            "[YOU] Who are you?", 30,
+            "[Kaoru] Kaoru", 30,
+            "TO BE CONTINUED...", 30
+        ]
+    },

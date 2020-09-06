@@ -91,12 +91,11 @@ public class Timeline {
 
         index = 0;
         currentNode = nodes.get(index);
-        unlockedNodes = nodes.size() - 1; // TODO: REMOVE THAT
+        unlockedNodes = 0;
 
         for (Node node : nodes) {
             if (node.getType() == Node.LEVEL_NODE) {
                 Level level = (Level) node;
-                LOGGER.info("HELLO WORLD");
                 level.setScript(null);
             }
         }

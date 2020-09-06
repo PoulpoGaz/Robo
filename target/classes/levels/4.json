@@ -1,0 +1,28 @@
+{
+    "width": 3,
+    "height": 7,
+    "description": [
+        "Pick and drop the data cube on the",
+        "destination tile",
+        "New operation:",
+        " -pick (here/left/down/right/up)",
+        " -drop (here/left/down/right/up)"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall",
+        "tile:wall", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:wall",
+        "tile:wall", "tile:destination", "tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall"
+    ],
+    "data_cubes": [
+        {
+            "x": 1,
+            "y": 2,
+            "value": "random"
+        }
+    ]
+}

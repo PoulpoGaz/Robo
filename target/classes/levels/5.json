@@ -1,0 +1,26 @@
+{
+    "width": 9,
+    "height": 7,
+    "description": [
+        "Move each cubes on a destination tile"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:floor", "tile:wall",
+        "tile:wall", "tile:destination", "tile:destination", "tile:destination", "tile:destination", "tile:destination", "tile:destination", "tile:destination", "tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall",  "tile:wall"
+    ],
+    "data_cubes": [
+        {"x": 1, "y": 2, "value": "random"},
+        {"x": 2, "y": 2, "value": "random"},
+        {"x": 3, "y": 2, "value": "random"},
+        {"x": 4, "y": 2, "value": "random"},
+        {"x": 5, "y": 2, "value": "random"},
+        {"x": 6, "y": 2, "value": "random"},
+        {"x": 7, "y": 2, "value": "random"}
+    ]
+}

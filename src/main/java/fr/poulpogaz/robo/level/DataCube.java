@@ -2,8 +2,6 @@ package fr.poulpogaz.robo.level;
 
 import fr.poulpogaz.robo.utils.ResourceLocation;
 
-import java.util.Arrays;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class DataCube {
@@ -53,27 +51,16 @@ public class DataCube {
         setValue(value - v);
     }
 
+    public DataCube copy() {
+        return new DataCube(false, value);
+    }
+
     public int getValue() {
         return value;
     }
 
     public void setValue(int value) {
         this.value = value;
-
-        // bad
-        if (value > 99) {
-            do {
-                int v2 = value - 99;
-
-                this.value = -100 + v2;
-            } while (this.value > 99);
-        } else if (value < -99) {
-            do {
-                int v2 = +value - 99;
-
-                this.value = 100 - v2;
-            } while (this.value < -99);
-        }
     }
 
     public ResourceLocation getResourceLocation() {

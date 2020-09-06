@@ -1,0 +1,27 @@
+{
+    "width": 5,
+    "height": 11,
+    "description": [
+        "Drop in the void ONLY couples that are equals",
+        "New commands:",
+        " -add (here/left/down/right/up)",
+        " -sub (here/left/down/right/up)",
+        "e.g \"add here\" will add the data cube hold by robo",
+        "and the data cube indicate by the argument"
+    ],
+    "robot": [1, 1],
+    "data": [
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:floor", "tile:floor", "tile:void" ,"tile:wall",
+        "tile:wall", "tile:wall",  "tile:wall",  "tile:wall" ,"tile:wall"
+    ],
+    "data_cubes": []
+}

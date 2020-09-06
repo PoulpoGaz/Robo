@@ -58,6 +58,10 @@ public final class ScriptExecutor {
                 case "drop" -> operation = new Drop(i);
                 case "ifzero" -> operation = new IfZero(i);
                 case "ifneg" -> operation = new IfNeg(i);
+                case "copyfrom" -> operation = new CopyFrom(i);
+                case "copyto" -> operation = new CopyTo(i);
+                case "add" -> operation = new MathOperation.Add(i);
+                case "sub" -> operation = new MathOperation.Sub(i);
                 default -> {
                     return unknownOperation(parts[0], i);
                 }

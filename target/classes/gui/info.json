@@ -1,0 +1,14 @@
+{
+    "none": {
+        "texture": "texture:gui",
+        "at": [2, 0]
+    },
+    "hovered": {
+        "texture": "texture:gui",
+        "at": [2, 1]
+    },
+    "pressed": {
+        "texture": "texture:gui",
+        "at": [2, 2]
+    }
+}
