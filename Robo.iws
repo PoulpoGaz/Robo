@@ -1,141 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="add level 6, with ifzero operation and data cube generator">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/levels/Level7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/levels/Level8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/CopyFrom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/CopyTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/DirectionalOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/MathOperation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/levels/8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/story.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/FontColor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/GUIBox.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/GuiElement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/ReportGui.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/ScriptGUI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/StringButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/TexturedButton.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/gui/TexturedGuiElement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/CheckReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/DataCube.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/DataCubeGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/Level.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/LevelData.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/LevelRenderer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/Levels.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/MapBuilderWithDataCubeGenerator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/DestinationLevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level6$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level6$Generator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level7$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level7$Generator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level7.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level8$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level8$Generator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/Level8.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/level/levels/MoveDataCubeToDestinationLevel.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/main/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/main/Robo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/Map.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/MapBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/Tile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/Tiles.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/tiles/CrateTile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/tiles/DestinationTile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/tiles/VoidTile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/map/tiles/WallTile.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/CopyFrom.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/CopyTo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/DirectionalOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Drop.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/EmptyOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/ExecuteReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/GoTo.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/GoToOperations.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/IfNeg.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/IfZero.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Label.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/MathOperation$Add.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/MathOperation$Sub.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/MathOperation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Move.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Operation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/OperationReport.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Pick.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Pos.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Report.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/Robot.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/RobotBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/ScriptExecutor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/ScriptThread$Factory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/ScriptThread.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/robot/ScriptUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/EndState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/GameState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/MainMenu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/State.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/StateManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/StoryState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/states/TimelineState.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/timeline/Node.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/timeline/StoryLog.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/timeline/Timeline.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/Cache.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/DrawStringUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/ImageUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/InterpolationHelper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/ResourceLocation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/StringUtils.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/utils/TextureManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/Key.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/KeyHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/MouseHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/View.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/Window$WindowHandler.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/fr/poulpogaz/robo/window/Window.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gui/back.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gui/info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gui/play.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/gui/stop.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/4.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/5.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/6.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/7.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/levels/8.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/robot/robot_happy.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/robot/robot_normal.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/robot/robot_not_running.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/robot/robot_sad.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sprite/data_cube.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sprite/timeline_level.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/sprite/timeline_story.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/story/story.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/textures/gui.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/textures/main_menu.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/textures/tileset.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/textures/timeline.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/tiles/crate.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/tiles/destination.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/tiles/floor.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/tiles/void.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/tiles/wall.json" afterDir="false" />
+    <list default="true" id="766575d4-1ae9-4fe0-993e-cdd8f7262ef0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Robo.iws" beforeDir="false" afterPath="$PROJECT_DIR$/Robo.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DataCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/DataCube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Levels.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/level/Levels.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Drop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Drop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Pick.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/Pick.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/robot/ScriptExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/states/GameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/poulpogaz/robo/timeline/Timeline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/story/story.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/story/story.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -393,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1599324136420</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add level 7 and 8, copyfrom, copyto, add and sub operations.&#10;First release for the olc CodeJam 2020">
+      <created>1599379100466</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1599379100466</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -415,13 +291,14 @@
     <MESSAGE value="add robot &quot;emotions&quot; (happy, sad, normal, not running)" />
     <MESSAGE value="add data cubes and pick and drop operations&#10;add 2 levels" />
     <MESSAGE value="add level 6, with ifzero operation and data cube generator" />
-    <option name="LAST_COMMIT_MESSAGE" value="add level 6, with ifzero operation and data cube generator" />
+    <MESSAGE value="add level 7 and 8, copyfrom, copyto, add and sub operations.&#10;First release for the olc CodeJam 2020" />
+    <option name="LAST_COMMIT_MESSAGE" value="add level 7 and 8, copyfrom, copyto, add and sub operations.&#10;First release for the olc CodeJam 2020" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599321774943">
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599380400949">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1599321774943" />
+    <state x="254" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1599380400949" />
     <state x="605" y="135" key="#com.intellij.ide.util.MemberChooser" timestamp="1599325040045">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -442,30 +319,30 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="519" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1600.860@0.0.1600.860" timestamp="1598956613690" />
-    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1599377895294">
+    <state x="387" y="0" key="CommitChangelistDialog2" timestamp="1599379084558">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599377895294" />
+    <state x="387" y="0" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1599379084558" />
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog" timestamp="1598948351194">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="92" y="92" width="1416" height="676" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1598948351194" />
-    <state width="1556" height="231" key="GridCell.Tab.0.bottom" timestamp="1599378776858">
+    <state width="1556" height="231" key="GridCell.Tab.0.bottom" timestamp="1599379178668">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="231" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599378776858" />
-    <state width="1556" height="231" key="GridCell.Tab.0.center" timestamp="1599378776857">
+    <state width="1556" height="231" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1599379178668" />
+    <state width="1556" height="231" key="GridCell.Tab.0.center" timestamp="1599379178667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="231" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599378776857" />
-    <state width="1556" height="231" key="GridCell.Tab.0.left" timestamp="1599378776857">
+    <state width="1556" height="231" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1599379178667" />
+    <state width="1556" height="231" key="GridCell.Tab.0.left" timestamp="1599379178667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="231" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599378776857" />
-    <state width="1556" height="231" key="GridCell.Tab.0.right" timestamp="1599378776858">
+    <state width="1556" height="231" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1599379178667" />
+    <state width="1556" height="231" key="GridCell.Tab.0.right" timestamp="1599379178667">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1556" height="231" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599378776858" />
+    <state width="1556" height="231" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1599379178667" />
     <state width="1556" height="268" key="GridCell.Tab.1.bottom" timestamp="1599058684477">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
